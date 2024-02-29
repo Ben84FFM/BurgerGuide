@@ -24,8 +24,7 @@ function Navbar() {
     flex justify-between items-center 
     bg-black p-4 font-bold  '>
 
-
-      <Link to='/'
+<Link to='/'
         className='cursor-pointer hover:opacity-80
        text-lg font-bold text-cbb26a'>
         <h1 className='text-lg'>Home</h1></Link>
@@ -35,26 +34,16 @@ function Navbar() {
       <Link to='/about'
         className='cursor-pointer hover:opacity-80
        text-lg font-bold text-cbb26a '> About</Link>
-
       <Link to='/login' className='cursor-pointer hover:opacity-80
        text-lg font-bold text-cbb26a'> LOGIN</Link>
-
       <div className='flex items-center space-x-4'>
-
-
-
         <button className='cursor-pointer hover:opacity-80
           text-lg font-bold text-cbb26a '
           onClick={handleLogout}
         >LOGOUT</button>
 
-
-
-
-        <Link to='/posts'
-          className='cursor-pointer hover:opacity-80
-        text-lg font-bold text-cbb26a '>
-          POST       </Link>
+<Link to='/search' className='cursor-pointer hover:opacity-80   text-lg font-bold text-cbb26a'>
+          <h1 className=''>SEARCH</h1></Link>
 
       </div>
     </div>
