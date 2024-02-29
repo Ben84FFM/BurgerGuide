@@ -65,63 +65,54 @@ function Post() {
     <div className='container mx-auto max-w-md mt-20 rounded-xl shadow-xl shadow-gray-500'>
       <div className='p-4'>
         <h2 className='text-2xl font-semibold mb-4'>Create a Blog Post</h2>
+
         <form onSubmit={handleSubmit}>
           <div className='mb-4'>
             <p className='block mb-2'>restaurant:</p>
-            <input
+            <input className='border rounded w-full p-2'
               type='text'
               name='restaurant'
               value={postData.restaurant}
-              onChange={handleChange}
-              className='border rounded w-full p-2'
-            />
+              onChange={handleChange} />
           </div>
           <div className='mb-4'>
             <p className='block mb-2'>ranking:</p>
-            <input
+            <input className='border rounded w-full p-2'
               type='text'
               name='ranking'
               value={postData.ranking}
               onChange={handleChange}
-              className='border rounded w-full p-2'
-            />
-          </div>
+            />          </div>
           <div className='mb-4'>
             <p className='block mb-2'>comment:</p>
-            <input
+            <input className='border rounded w-full p-2'
               type='text'
               name='comment'
               value={postData.comment}
-              onChange={handleChange}
-              className='border rounded w-full p-2'
-            />
+              onChange={handleChange} />
           </div>
           <div className='mb-4'>
             <p className='block mb-2'>Image-url:</p>
-            <input
+            <input className='border rounded w-full p-2'
               type='text'
               name='image_url'
               value={postData.image_url}
               onChange={handleChange}
-              className='border rounded w-full p-2'
+
             />
           </div>
           <div className='mb-4'>
             <p className='block mb-2'>location:</p>
-            <input
+            <input className='border rounded w-full p-2'
               type='text'
               name='location'
               value={postData.location}
               onChange={handleChange}
-              className='border rounded w-full p-2'
-            />
-          </div>
-          <button
-            type='submit'
-            className='bg-blue-500 text-white rounded p-2 mt-4'
-          >
-            POST
-          </button>
+            />  </div>
+
+          <button className='rounded p-2 hover:underline  mt-4' type='submit' >  POST  </button>
+          <Link to='/search' className='cursor-pointer hover:underline  '>  <h1 className=''>SEARCH</h1></Link>
+
         </form>
 
 
@@ -129,5 +120,4 @@ function Post() {
     </div>
   );
 }
-
 export default Post;
