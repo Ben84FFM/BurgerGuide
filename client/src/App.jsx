@@ -25,6 +25,7 @@ function App() {
         <Route path='/login' element={<LoginForm />} />
         <Route path='/posts' element={<Post />} />
         <Route path='/rating' element={<BurgerRating />} />
+        <Route path='/addrestaurant' element={<AddRestaurantForm />} />
       </Routes>
  <Footer />
     </>
