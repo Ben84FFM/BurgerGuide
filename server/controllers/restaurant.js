@@ -1,4 +1,4 @@
-import Restaurant from '../models/Restaurant.js';
+import Restaurant from '../models/addRestaurant.js';
 import asyncHandler from '../utils/asyncHandler.js';
 import ErrorResponse from '../utils/ErrorResponse.js';
 
@@ -17,10 +17,11 @@ export const getSingleRestaurant = asyncHandler(async (req, res, next) => {
 });
 
 export const addRestaurant = asyncHandler(async (req, res, next) => {
-  const { body } = req;
+  const { body, uid} = req;
 
-  const newRestaurant = await Restaurant.create(body);
-  res.status(201).json(newRestaurant);
+  const newRestaurant = await Restaurant.create({ ...body, user: uid });
+  const popultatedPost = await Restaurant.findById(newRestaurant._id);
+  res.status(201).json(popultatedPost);
 });
 
 export const updateRestaurant = asyncHandler(async (req, res, next) => {

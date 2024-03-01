@@ -12,17 +12,17 @@ const addRestaurantSchema = new mongoose.Schema({
   city: {
     type: String,
     required: true,
-  },
-  location: {
-    type: {
-      type: String,
-      enum: ['Point'],
-      required: true,
-    },
-    coordinates: {
-      type: [Number],
-      required: true,
-    },
+  // },
+  // // location: {
+  // //   type: {
+  // //     type: String,
+  // //     enum: ['Point'],
+  // //     required: true,
+  // //   },
+  //   coordinates: {
+  //     type: [Number],
+  //     // required: true,
+  //   },
   },
   website: {
     type: String,
