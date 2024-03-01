@@ -20,7 +20,7 @@ const AddRestaurantForm = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:5173/add-restaurant', restaurantData);
+      const response = await axios.post('http://localhost:5000/restaurant', restaurantData);
 
       if (response.status === 201) {
         alert('Restaurant erfolgreich hinzugefügt!');
