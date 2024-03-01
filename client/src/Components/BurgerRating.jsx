@@ -33,7 +33,7 @@ const BurgerRating = () => {
     setSubmitted(true);
 
     try {
-      await axios.post('http://localhost:3001/submit-rating', { ...ratings, restaurantId });
+      await axios.post('http://localhost:5173/submit-rating', { ...ratings, restaurantId });
 } catch (error) {
       console.error('Fehler beim Übermitteln der Bewertung:', error.message);
 }
@@ -62,7 +62,7 @@ const BurgerRating = () => {
       <h2 className="text-2xl font-bold text-cbb26a mb-4">Burger Rating</h2>
 
       <div className="mb-4">
-        <p className="text-lg font-semibold text-cbb26a mb-2">Restaurant ID:</p>
+        <p className="text-lg font-semibold text-cbb26a mb-2">Name of the Restaurant:</p>
         <input
           type="text"
           value={restaurantId}

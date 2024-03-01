@@ -9,9 +9,7 @@ import RegisterForm from './Components/RegisterForm'
 import LoginForm from './Components/LoginForm'
 import Post from './Components/Post'
 import Search from './Components/Search'
-
-// import BurgerStores from './Components/BurgerStores'
-// import { Route, Routes } from 'react-router-dom';
+import AddRestaurantForm from './Components/addRestaurant'
 
 
 function App() {
