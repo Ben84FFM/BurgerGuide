@@ -34,9 +34,9 @@ const AddRestaurantForm = () => {
 
   return (
     <div style={{ maxWidth: '400px', margin: 'auto', paddingTop: '20px' }}>
-      <h2>Restaurant hinzufügen</h2>
+      <h2>Add new Restaurant</h2>
 
-      <label>Name des Restaurants:</label>
+      <label>Name of Restaurants:</label>
       <input
         type="text"
         value={restaurantName}
