@@ -60,13 +60,13 @@ const AddRestaurantForm = () => {
         style={{ width: '100%', marginBottom: '10px' }}
       />
 
-      <label>Koordinaten:</label>
+      {/* <label>Koordinaten:</label>
       <input
         type="text"
         value={coordinates}
         onChange={(e) => setCoordinates(e.target.value)}
         style={{ width: '100%', marginBottom: '10px' }}
-      />
+      /> */}
 
       <label>Website:</label>
       <input

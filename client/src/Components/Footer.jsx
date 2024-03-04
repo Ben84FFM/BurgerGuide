@@ -5,8 +5,8 @@ const Footer = () => {
 
   return (
     <footer className="bg-black text-cbb26a py-8">
-      <div className="container mx-auto flex flex-wrap justify-between">
-        <div className="footer-section">
+      <div className="container mx-auto flex flex-wrap justify-center lg:justify-between">
+        <div className="footer-section mb-4 lg:mb-0">
           <h4 className="text-cbb26a text-lg font-bold">Impressum</h4>
           <p className="text-cbb26a">BurgerGuide</p>
           <p className="text-cbb26a">WBS WDG14</p>
@@ -15,7 +15,7 @@ const Footer = () => {
           {/* Weitere Impressum-Informationen hier */}
         </div>
 
-        <div className="footer-section">
+        <div className="footer-section mb-4 lg:mb-0">
           <h4 className="text-cbb26a text-lg font-bold" >Copyright © {currentYear}</h4>
           <p className="text-cbb26a">Alle Rechte vorbehalten.</p>
         </div>

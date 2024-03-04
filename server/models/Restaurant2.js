@@ -1,72 +1,44 @@
 import mongoose from 'mongoose';
 
 const reviewSchema = new mongoose.Schema({
-  user: {
-    type: String,
-    required: true,
-  },
-  rating: {
-    type: Number,
-    required: true,
-  },
-  comment: {
-    type: String,
-  },
+  user: String,
+  rating: Number,
+  comment: String,
 });
 
-const addRestaurantSchema = new mongoose.Schema({
+const restaurantSchema = new mongoose.Schema({
   restaurant: {
     type: String,
     required: true,
   },
-  street: {
-    type: String,
-    required: true,
-  },
-  city: {
-    type: String,
-    required: true,
-  },
   location: {
-    type: String,
+    type: {
+      type: String,
+      default: 'Point',
+    },
+    coordinates: [Number],
   },
-  website: {
-    type: String,
+  address: {
+    street: {
+      type: String,
+      required: true,
+    },
+    city: {
+      type: String,
+      required: true,
+    },
   },
-  phonenumbers: {
-    type: [String],
-  },
-  rating: {
-    type: Number,
-  },
-  comments: {
-    type: String,
-  },
-  images: {
-    type: String,
-  },
-  cleanliness: {
-    type: Number,
-  },
-  price: {
-    type: Number,
-  },
-  ambiance: {
-    type: Number,
-  },
-  service: {
-    type: Number,
-  },
-  accessibility: {
-    type: Number,
-  },
-  restaurantId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Restaurant',
-  },
-  reviews: [reviewSchema], // Bewertungen als Array speichern
+  website: String,
+  phonenumbers: [String],
+  images: String,
+  cleanliness: Number,
+  price: Number,
+  ambiance: Number,
+  service: Number,
+  accessibility: Number,
+  reviews: [reviewSchema],
 });
 
-const RestaurantModel = mongoose.model('Restaurant', addRestaurantSchema);
+restaurantSchema.index({ location: '2dsphere' });
 
-export default RestaurantModel;
+export default mongoose.model('Restaurant', restaurantSchema);

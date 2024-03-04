@@ -10,6 +10,7 @@ import LoginForm from './Components/LoginForm'
 import Post from './Components/Post'
 import Search from './Components/Search'
 import AddRestaurantForm from './Components/addRestaurant'
+import AboutUs from './Components/AboutUs'
 // import BurgerStore from './Components/BurgerStore'
 
 
@@ -20,6 +21,7 @@ function App() {
     <>
       <Navbar />
       <Routes>
+        <Route path="/about" element={<AboutUs />} />
         <Route path="/burgerstores" element={<Search />} />
         <Route path="/" element={<HeroSection />} />
         <Route path='/register' element={<RegisterForm />} />

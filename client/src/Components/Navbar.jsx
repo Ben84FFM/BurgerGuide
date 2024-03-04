@@ -27,7 +27,7 @@ function Navbar() {
       <Link to='/'
         className='cursor-pointer hover:opacity-80
        text-lg font-bold text-cbb26a'>
-        <h1 className='text-lg'>Home</h1></Link>
+        <h1 className='text-lg '>Home</h1></Link>
 
       <img src="../src/assets/BurgerGuideLogo2.png" alt="Logo" className="h-10 w-10" />
 

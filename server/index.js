@@ -14,11 +14,10 @@ const PORT = 5000;
 app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
-
-
 app.use('/auth', authRouter);
 app.use('/posts', postsRouter);
 app.use('/restaurant', restaurantRouter);
+
 
 app.use(errorHandler);
 
