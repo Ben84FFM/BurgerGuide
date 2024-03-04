@@ -14,8 +14,6 @@ const SearchRestaurant = () => {
         e.preventDefault();
         try {
             const response = await axios.get(`http://localhost:5000/restaurant/search?restaurant=${search}`, { withCredentials: true });
-
-
             setSearchResults(response.data);
             console.log(response.data);
             setLoading(false);
