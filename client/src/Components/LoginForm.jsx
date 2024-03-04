@@ -48,10 +48,9 @@ function LoginForm() {
       alt="LandingPageLogo2"
       className="w-full object-fill h-auto max-w-screen-xl"
     />
-    <div className="containerBen3 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-20 rounded xl shadow-xl shadow-ray-300 flex  bg-black rounded-md">
-    
+    <div className="containerBen3 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-20 rounded xl shadow-xl shadow-ray-300 flex bg-opacity-70 bg-black rounded-md">
     <div className='containerLogin mt-20 mx-auto rounded-xl shadow-xl shadow-gray-500'>
-      <div className='rounded bg-black p-4'>
+      <div className='rounded bg-black p-4 bg-opacity-70'>
         <h2 className='text-cbb26a text-lg font-bold mb-4'>Login</h2>
         {error && <p className='text-red-500 mb-4'>{error}</p>}
         <form onSubmit={handleSubmit}>

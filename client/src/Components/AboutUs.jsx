@@ -20,7 +20,7 @@ return (
       />
 
       {/* Container mit dem Text und dem Bild */}
-      <div className="containerLogoTextBox absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center bg-black border-slate-50 rounded-xl shadow-xl shadow-gray-500">
+      <div className=" bg-opacity-70 containerLogoTextBox absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center bg-black rounded-xl ">
         <img
           src="../src/assets/BurgerGuideLogo2.png"
           alt="BurgerGuideLogo"
