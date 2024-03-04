@@ -27,16 +27,12 @@ const SearchRestaurant = () => {
     return (
         <div>
             <form onSubmit={handleSeach}>
-
                 <p></p><input type='text' value={search} onChange={(e) => setSearch(e.target.value)} />
-
                 <button type="submit" >Search Restaurant</button>
             </form>
-
         </div>
     )
 }
-
 
     ;
 export default SearchRestaurant;
