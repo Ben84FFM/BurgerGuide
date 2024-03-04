@@ -10,6 +10,10 @@ restaurantsRouter
   .post(restaurantController.addRestaurant);
 
 restaurantsRouter
+  .route('/search/')
+  .get(restaurantController.searchRestaurants);
+
+restaurantsRouter
   .route('/:id')
   .get(restaurantController.getSingleRestaurant)
   .put(verifyToken, restaurantController.updateRestaurant)

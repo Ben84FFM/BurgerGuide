@@ -18,10 +18,10 @@ function App() {
 
   return (
     <>
- <Navbar />
-  <Routes>
-  <Route path="/search" element={<Search />} />
-                <Route path="/" element={<HeroSection/>} />
+      <Navbar />
+      <Routes>
+        <Route path="/burgerstores" element={<Search />} />
+        <Route path="/" element={<HeroSection />} />
         <Route path='/register' element={<RegisterForm />} />
         {/* <Route path='/burgerstores' element={<BurgerStore />} /> */}
         <Route path='/login' element={<LoginForm />} />
@@ -29,7 +29,7 @@ function App() {
         {/* <Route path='/rating' element={<BurgerRating />} /> */}
         <Route path='/addrestaurant' element={<AddRestaurantForm />} />
       </Routes>
- <Footer />
+      <Footer />
     </>
   )
 }

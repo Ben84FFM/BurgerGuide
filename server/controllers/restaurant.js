@@ -12,12 +12,12 @@ export const getSingleRestaurant = asyncHandler(async (req, res, next) => {
 
   const restaurant = await Restaurant.findById(id);
   if (!restaurant) throw new ErrorResponse(`Restaurant ${id} does not exist`, 404);
-  
+
   res.json(restaurant);
 });
 
 export const addRestaurant = asyncHandler(async (req, res, next) => {
-  const { body, uid} = req;
+  const { body, uid } = req;
 
   const newRestaurant = await Restaurant.create({ ...body, user: uid });
   const popultatedPost = await Restaurant.findById(newRestaurant._id);
@@ -47,4 +47,17 @@ export const deleteRestaurant = asyncHandler(async (req, res, next) => {
 
   await Restaurant.findByIdAndDelete(id);
   res.json({ success: `Restaurant ${id} was deleted` });
+});
+
+
+export const searchRestaurants = asyncHandler(async (req, res, next) => {
+
+  const { restaurant } = req.query;
+  console.log(restaurant);
+
+  const found = await Restaurant.find({ restaurant: { $regex: restaurant, $options: 'i' } });
+  if (!found) throw new ErrorResponse(`Restaurant ${restaurant} does not exist`, 404);
+
+  res.json(found);
+
 });
