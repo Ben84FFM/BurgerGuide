@@ -44,29 +44,29 @@ function Search() {
     );
   }
 
-  return (
-    <div className='flex flex-wrap justify-center my-4'>
-      <SearchRestaurant to='/addRestaurants/' element={<SearchRestaurant />} />
-      {restaurants.map((rest) => {
-        const formattedDate = rest.date
-          ? format(new Date(rest.date), 'MMM dd, yyyy @HH:mm')
-          : '';
-        return (
-          <div className='w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4' key={rest._id}>
-            <div className='Card h-full border-2 border-slate-50 rounded-xl shadow-xl shadow-gray-500'>
-              <div className='flex flex-col m-4 '>
-                <h2 className='text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-semibold mb-2 sm:mb-3 text-center'>{rest.restaurant}</h2>
-                <h2 className='text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-semibold mb-2 sm:mb-3 text-center'>
-                  <Link to={'/restaurant/' + rest._id}>{rest.restaurant}</Link>
-                </h2>
-                {/* Other content */}
-              </div>
+return (
+  <div className='flex flex-wrap justify-center w-full p-4 border-2'>
+    <SearchRestaurant to='/addRestaurants/' element={<SearchRestaurant/>} />
+    {restaurants.map((rest) => {
+      const formattedDate = rest.date
+        ? format(new Date(rest.date), 'MMM dd, yyyy @HH:mm')
+        : '';
+      return (
+        <div className='w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4' key={rest._id}>
+          <div className='Card h-full border-2 border-slate-50 rounded-xl shadow-xl shadow-gray-500'>
+            <div className='flex flex-col m-4 '>
+              {/* <h2 className='text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-semibold mb-2 sm:mb-3 text-center'>{rest.restaurant}</h2> */}
+              <h2 className='text-cbb26a text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-semibold mb-2 sm:mb-3 text-center'>
+                <Link to={'/restaurant/' + rest._id}>{rest.restaurant}</Link>
+              </h2>
+              {/* Other content */}
             </div>
           </div>
-        );
-      })}
-    </div>
-  );
+        </div>
+      );
+    })}
+  </div>
+);
 }
 
 export default Search;

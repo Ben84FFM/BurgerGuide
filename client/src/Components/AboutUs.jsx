@@ -19,8 +19,6 @@ return (
         className="w-full object-fill h-auto max-w-screen-xl"
       />
 
-lg:w-1/4 h-full m-4 border-2 border-slate-50 rounded-xl shadow-xl shadow-gray-500"
-
       {/* Container mit dem Text und dem Bild */}
       <div className="containerLogoTextBox absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center bg-black border-slate-50 rounded-xl shadow-xl shadow-gray-500">
         <img
