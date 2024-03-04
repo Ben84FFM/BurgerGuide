@@ -10,11 +10,16 @@ function Search() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [visibleRestaurants, setVisibleRestaurants] = useState(5);
+  const [isFetching, setIsFetching] = useState(false);
 
   useEffect(() => {
     const fetchRestaurants = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/restaurant`);
+        const response = await axios.get(`http://localhost:5000/restaurant`, {
+          params: {
+            limit: visibleRestaurants, // Limit für die Anzahl der anzuzeigenden Restaurants
+          },
+        });
         setRestaurants(response.data);
         setLoading(false);
         console.log(response.data);
@@ -24,12 +29,29 @@ function Search() {
       }
     };
     fetchRestaurants();
-  }, []);
+  }, [visibleRestaurants]); // Führe die Anfrage erneut aus, wenn die sichtbaren Restaurants geändert werden
 
-  const handleScroll = (e) => {
+  const handleScroll = async (e) => {
     const bottom = e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
-    if (bottom) {
-      setVisibleRestaurants((prevCount) => prevCount + 5);
+
+    if (bottom && !isFetching) {
+      setIsFetching(true);
+
+      // Fetch more restaurants
+      try {
+        const response = await axios.get(`http://localhost:5000/restaurant`, {
+          params: {
+            limit: 5, // Anzahl der Restaurants, die bei jedem Scrollen geladen werden sollen
+            skip: visibleRestaurants, // Überspringe bereits angezeigte Restaurants
+          },
+        });
+        setRestaurants((prevRestaurants) => [...prevRestaurants, ...response.data]);
+        setVisibleRestaurants((prevCount) => prevCount + 5);
+        setIsFetching(false);
+      } catch (error) {
+        setIsFetching(false);
+        setError(true);
+      }
     }
   };
 
@@ -74,31 +96,35 @@ function Search() {
             <div className="flex justify-center w-full mb-4">
               <SearchRestaurant to="/addRestaurants/" element={<SearchRestaurant />} />
             </div>
-            <div className="flex flex-wrap justify-center w-full scroll-container" onScroll={handleScroll} style={{ overflowY: 'auto', maxHeight: '70vh' }}>
-              {restaurants.slice(0, visibleRestaurants).map((rest) => {
+            <div
+              className="flex flex-wrap justify-center w-full scroll-container"
+              onScroll={handleScroll}
+              style={{ overflowY: 'auto', maxHeight: '70vh' }}
+            >
+              {restaurants.map((rest) => {
                 const formattedDate = rest.date
                   ? format(new Date(rest.date), 'MMM dd, yyyy @HH:mm')
                   : '';
                 return (
-                  <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 inline-block" key={rest._id}>
+                  <div
+                    className="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 inline-block"
+                    key={rest._id}
+                  >
                     <div className="Card overflow-hidden border-2 bg-white border-slate-50 rounded-xl shadow-xl shadow-gray-500 flex flex-col justify-between">
                       <div className="flex flex-col m-4">
                         <h2 className="text-cbb26a text-sm sm:text-base md:text-lg lg:text-base xl:text-lg font-semibold mb-2 sm:mb-3 text-center">
                           <Link to={'/restaurant/' + rest._id}>{rest.restaurant}</Link>
                         </h2>
-                        {/* Hier wird die Website angezeigt */}
                         {rest.website && (
                           <p className="text-gray-600 text-xs sm:text-sm mb-2">
-                            <Link to={rest.website} target="_blank" rel="noopener noreferrer">{rest.website}</Link>
+                            <Link to={rest.website} target="_blank" rel="noopener noreferrer">
+                              {rest.website}
+                            </Link>
                           </p>
                         )}
-                        {/* Email anzeigen */}
                         {rest.email && (
-                          <p className="text-gray-600 text-xs sm:text-sm mb-2">
-                            Email: {rest.email}
-                          </p>
+                          <p className="text-gray-600 text-xs sm:text-sm mb-2">Email: {rest.email}</p>
                         )}
-                        {/* Weitere Inhalte */}
                       </div>
                     </div>
                   </div>
@@ -106,8 +132,7 @@ function Search() {
               })}
             </div>
           </div>
-          <div className="containerTextBox text-center">
-          </div>
+          <div className="containerTextBox text-center"></div>
         </div>
       </div>
     </div>
