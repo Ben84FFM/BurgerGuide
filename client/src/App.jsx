@@ -10,6 +10,8 @@ import LoginForm from './Components/LoginForm'
 import Post from './Components/Post'
 import Search from './Components/Search'
 import AddRestaurantForm from './Components/addRestaurant'
+// import BurgerStore from './Components/BurgerStore'
+
 
 
 function App() {
@@ -21,6 +23,7 @@ function App() {
   <Route path="/search" element={<Search />} />
                 <Route path="/" element={<HeroSection/>} />
         <Route path='/register' element={<RegisterForm />} />
+        {/* <Route path='/burgerstores' element={<BurgerStore />} /> */}
         <Route path='/login' element={<LoginForm />} />
         <Route path='/posts' element={<Post />} />
         {/* <Route path='/rating' element={<BurgerRating />} /> */}
