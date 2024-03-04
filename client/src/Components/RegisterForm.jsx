@@ -43,8 +43,8 @@ function RegisterForm() {
 
     return (
 
-      <div className="containerBG bg-black">
-        <div className="containerImg flex flex-col items-center max-w-screen-xl mx-auto relative"> 
+      <div className="containerBG bg-black ">
+        <div className="containerImg flex flex-col items-center max-w-screen-xl mx-auto relative "> 
           {/* ImageTop */}
           <img
             src="../src/assets/LandingPage.jpg"
@@ -60,9 +60,8 @@ function RegisterForm() {
           />
     
           {/* Container mit dem Text und dem Bild */}
-          <div className="containerLogoTextBox absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center bg-black border-slate-50 rounded-xl shadow-xl shadow-gray-500">
-            
-            <div className="containerTextBox text-center">
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center bg-black border-slate-50 rounded-xl shadow-xl shadow-gray-500">  
+            <div className="text-center bg-opacity-70">
             <div className='bg-black container mx-auto max-w-md rounded-xl shadow-xl shadow-gray-500'>
       <div className='p-4'>
         <h2 className='text-cbb26a text-xl font-bold mb-4'>Register</h2>
