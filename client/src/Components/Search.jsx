@@ -54,6 +54,7 @@ function Search() {
           <div className='Card lg:w-1/4 h-full m-4 border-2 border-slate-50 rounded-xl shadow-xl shadow-gray-500' key={rest._id}>
             <div className='flex flex-col m-4 '>
               <h2 className='text-3xl font-semibold mb-4 text-center'>  {rest.restaurant}  </h2>
+              <h2 className='text-3xl font-semibold mb-4 text-center'> <Link to={'/restaurant/' + rest._id} > {rest.restaurant}</Link> </h2>
               {/* <img className='rounded-xl my-4 h-full w-full' src={rest.image_url} alt={rest.restaurant} /> */}
               {/* <p>{rest.comment}</p> */}
               {/* <p className='my-4'><Link className='text-blue-500 hover:underline' to='/'>@{rest.author ? rest.author.username : 'Unknwon Author'}</Link>{' '}·{formattedDate}</p> */}
@@ -61,7 +62,6 @@ function Search() {
           </div>
         );
       })}
-
     </div>
   );
 }

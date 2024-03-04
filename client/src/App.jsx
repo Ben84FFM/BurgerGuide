@@ -8,12 +8,13 @@ import HeroSection from './Components/Hero'
 import RegisterForm from './Components/RegisterForm'
 import LoginForm from './Components/LoginForm'
 import Post from './Components/Post'
-import Search from './Components/Search'
 import AddRestaurantForm from './Components/addRestaurant'
 import AboutUs from './Components/AboutUs'
 // import BurgerStore from './Components/BurgerStore'
 
 
+import Search from './Components/Search'
+import Restaurant from './Components/Restaurant'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/about" element={<AboutUs />} />
         <Route path="/burgerstores" element={<Search />} />
+        <Route path='/restaurant/:id' element={<Restaurant />} />
         <Route path="/" element={<HeroSection />} />
         <Route path='/register' element={<RegisterForm />} />
         {/* <Route path='/burgerstores' element={<BurgerStore />} /> */}
