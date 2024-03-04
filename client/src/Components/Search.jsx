@@ -17,7 +17,7 @@ function Search() {
       try {
         const response = await axios.get(`http://localhost:5000/restaurant`, {
           params: {
-            limit: visibleRestaurants, // Limit für die Anzahl der anzuzeigenden Restaurants
+            limit: visibleRestaurants, 
           },
         });
         setRestaurants(response.data);
@@ -29,20 +29,18 @@ function Search() {
       }
     };
     fetchRestaurants();
-  }, [visibleRestaurants]); // Führe die Anfrage erneut aus, wenn die sichtbaren Restaurants geändert werden
-
+  }, [visibleRestaurants]);
   const handleScroll = async (e) => {
     const bottom = e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
 
     if (bottom && !isFetching) {
       setIsFetching(true);
 
-      // Fetch more restaurants
       try {
         const response = await axios.get(`http://localhost:5000/restaurant`, {
           params: {
-            limit: 5, // Anzahl der Restaurants, die bei jedem Scrollen geladen werden sollen
-            skip: visibleRestaurants, // Überspringe bereits angezeigte Restaurants
+            limit: 5, 
+            skip: visibleRestaurants, 
           },
         });
         setRestaurants((prevRestaurants) => [...prevRestaurants, ...response.data]);
@@ -90,7 +88,7 @@ function Search() {
           alt="LandingPageLogo2"
           className="w-full object-fill h-auto max-w-screen-xl"
         />
-
+        
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-70 border-slate-50 rounded-xl ">
           <div className="flex flex-col items-center p-4">
             <div className="flex justify-center w-full mb-4">

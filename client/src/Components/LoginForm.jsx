@@ -66,7 +66,7 @@ function LoginForm() {
           <div className='Password mb-4'>
             <p className='block mb-2 text-cbb26a'>Password</p>
             <input className='border rounded w-full p-2'
-              type='text'
+              type='password'
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
