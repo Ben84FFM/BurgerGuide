@@ -34,6 +34,8 @@ function Navbar() {
       <Link to='/about'
         className='cursor-pointer hover:opacity-80
        text-lg font-bold text-cbb26a '> About</Link>
+        <Link to='/search' className='cursor-pointer hover:opacity-80   text-lg font-bold text-cbb26a'>
+          <h1 className=''>BurgerStores</h1></Link>
       <Link to='/login' className='cursor-pointer hover:opacity-80
        text-lg font-bold text-cbb26a'> LOGIN</Link>
       <div className='flex items-center space-x-4'>
@@ -41,9 +43,6 @@ function Navbar() {
           text-lg font-bold text-cbb26a '
           onClick={handleLogout}
         >LOGOUT</button>
-
-<Link to='/search' className='cursor-pointer hover:opacity-80   text-lg font-bold text-cbb26a'>
-          <h1 className=''>SEARCH</h1></Link>
 
       </div>
     </div>
