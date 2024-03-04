@@ -6,7 +6,7 @@ const reviewSchema = new mongoose.Schema({
   comment: String,
 });
 
-const restaurantSchema = new mongoose.Schema({
+const RestaurantSchema = new mongoose.Schema({
   restaurant: {
     type: String,
     required: true,
@@ -30,15 +30,16 @@ const restaurantSchema = new mongoose.Schema({
   },
   website: String,
   phonenumbers: [String],
-  images: String,
-  cleanliness: Number,
-  price: Number,
-  ambiance: Number,
+  images: [String],
+  cleanliness: [String],
+  price: [String],
+  ambiance: [Number],
   service: Number,
   accessibility: Number,
   reviews: [reviewSchema],
 });
 
-restaurantSchema.index({ location: '2dsphere' });
+RestaurantSchema.index({ location: '2dsphere' });
 
-export default mongoose.model('Restaurant', restaurantSchema);
+
+export default mongoose.model('Restaurant', RestaurantSchema);
