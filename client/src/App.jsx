@@ -14,7 +14,6 @@ import AddRestaurantForm from './Components/addRestaurant'
 
 function App() {
 
-
   return (
     <>
  <Navbar />
