@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import mongoose from 'mongoose';
+// import mongoose from 'mongoose';
 
 
 const BurgerRating = () => {
