@@ -8,9 +8,10 @@ import HeroSection from './Components/Hero'
 import RegisterForm from './Components/RegisterForm'
 import LoginForm from './Components/LoginForm'
 import Post from './Components/Post'
-import Search from './Components/Search'
 import AddRestaurantForm from './Components/addRestaurant'
 
+import Search from './Components/Search'
+import Restaurant from './Components/Restaurant'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/burgerstores" element={<Search />} />
+        <Route path='/restaurant/:id' element={<Restaurant />} />
         <Route path="/" element={<HeroSection />} />
         <Route path='/register' element={<RegisterForm />} />
         <Route path='/login' element={<LoginForm />} />
