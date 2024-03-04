@@ -34,7 +34,7 @@ function Navbar() {
           className='cursor-pointer hover:opacity-80
           text-lg font-bold text-cbb26a '> About</Link>
         <Link to='/burgerstores' className='cursor-pointer hover:opacity-80   text-lg font-bold text-cbb26a'>
-          <h1 className=''>BurgerStores</h1>
+          <h1 className=''>Stores</h1>
         </Link>
         <Link to='/login' className='cursor-pointer hover:opacity-80
           text-lg font-bold text-cbb26a'> LOGIN</Link>
