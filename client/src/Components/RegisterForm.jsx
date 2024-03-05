@@ -42,7 +42,6 @@ function RegisterForm() {
 
 
     return (
-
       <div className="containerBG bg-black ">
         <div className="containerImg flex flex-col items-center max-w-screen-xl mx-auto relative "> 
           {/* ImageTop */}
