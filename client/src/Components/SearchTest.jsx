@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom'; // Neu hinzugefügt
 
 const SearchRestaurant = () => {
   const [search, setSearch] = useState('');
@@ -98,6 +99,18 @@ const SearchRestaurant = () => {
                         Load More
                       </button>
                     )}
+                  </div>
+                )}
+                {searchResults.length === 0 && (
+                  <div>
+                    <p>No results found.</p>
+                    <Link to="/addRestaurant">
+                      <button
+                        className="bg-white text-cbb26a px-4 py-2 rounded-md hover:bg-opacity-80 focus:outline-none shadow-md border border-gray-500 mt-4"
+                      >
+                        Add your Restaurant
+                      </button>
+                    </Link>
                   </div>
                 )}
               </div>
