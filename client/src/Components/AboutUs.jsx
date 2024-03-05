@@ -26,7 +26,7 @@ const AboutUs = () => {
             className="w-1/2 h-auto rounded-md mb-4"
           />
           <div className="containerTextBox text-center">
-            <h1 className="text-cbb26a text-lg font-bold mb-4">Welcome to BurgerGuide!</h1>
+            <h1 className="text-cbb26a text-lg font-bold mb-4">Behind the Stage!</h1>
 
             <p className="text-cbb26a mb-4">
               Express.js forms the backbone of our server-side development, enabling quick API creation for seamless data exchange between our database and the frontend.

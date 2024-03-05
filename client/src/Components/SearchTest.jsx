@@ -60,7 +60,7 @@ const SearchRestaurant = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center bg-black border-slate-50 rounded-xl shadow-xl shadow-gray-500">
           <div className="text-center bg-opacity-70">
             <div className="bg-black container mx-auto max-w-md rounded-xl shadow-xl shadow-gray-500">
-              <div className="max-w-md mx-auto p-4">
+              <div className="max-w-md mx-auto p-4 ">
                 <form onSubmit={handleSubmit} className="flex items-center space-x-2">
                   <input
                     type="text"
@@ -72,9 +72,7 @@ const SearchRestaurant = () => {
                   <button
                     type="submit"
                     className="bg-black text-cbb26a px-4 py-2 rounded-md hover:bg-opacity-80 focus:outline-none shadow-md border border-gray-500"
-                  >
-                    Search Restaurant
-                  </button>
+                  >Search</button>
                 </form>
                 {loading && <p>Loading...</p>}
                 {error && <p>Error loading results.</p>}
@@ -103,12 +101,13 @@ const SearchRestaurant = () => {
                 )}
                 {searchResults.length === 0 && (
                   <div>
-                    <p>No results found.</p>
+                    <p className='text-cbb26a mb-2"'>No results found</p>
                     <Link to="/addRestaurant">
+                    <p className='text-cbb26a font-bold mb-2"'>Your Favorite Store is not here?</p>
                       <button
-                        className="bg-white text-cbb26a px-4 py-2 rounded-md hover:bg-opacity-80 focus:outline-none shadow-md border border-gray-500 mt-4"
+                        className="bg-white text-cbb26a font-bold px-4 py-2 rounded-md hover:bg-opacity-80 focus:outline-none shadow-md border border-gray-500 mt-4"
                       >
-                        Add your Restaurant
+                        Add your Favorite Store
                       </button>
                     </Link>
                   </div>
