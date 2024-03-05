@@ -60,9 +60,9 @@ return (
           <div className="containerTextBox text-center">
             
           <div style={{ maxWidth: '400px', margin: 'auto', paddingTop: '20px' }}>
-      <h2>Add new Restaurant</h2>
+      <h2 className='text-cbb26a font-bold mb-4'>Add new Restaurant</h2>
 
-      <label className='text-cbb26a font-bold mb-4'>Name of Restaurants:</label>
+      <label className='text-cbb26a font-bold mb-4'>Restaurant</label>
       <input
         type="text"
         value={restaurantName}
@@ -121,7 +121,7 @@ return (
           cursor: 'pointer',
         }}
       >
-        Restaurant hinzufügen
+        Add Restaurant
       </button>
     </div>
 

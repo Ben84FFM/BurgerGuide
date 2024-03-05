@@ -105,7 +105,7 @@ function Search() {
                   : '';
                 return (
                   <div
-                    className="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 inline-block"
+                    className="container mx-auto max-w-md mt-20 rounded-xl shadow-xl shadow-gray-500"
                     key={rest._id}
                   >
                     <div className="Card overflow-hidden border-2 bg-white border-slate-50 rounded-xl shadow-xl shadow-gray-500 flex flex-col justify-between">
