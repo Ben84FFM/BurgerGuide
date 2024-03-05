@@ -10,9 +10,9 @@ import LoginForm from './Components/LoginForm'
 import Post from './Components/Post'
 import AddRestaurantForm from './Components/addRestaurant'
 import AboutUs from './Components/AboutUs'
+import SearchTest from './Components/SearchTest'
 
-
-import Search from './Components/Search'
+// import Search from './Components/Search'
 import Restaurant from './Components/Restaurant'
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/about" element={<AboutUs />} />
-        <Route path="/burgerstores" element={<Search />} />
+        <Route path="/burgerstores" element={<SearchTest />} />
         <Route path='/restaurant/:id' element={<Restaurant />} />
         <Route path="/" element={<HeroSection />} />
         <Route path='/register' element={<RegisterForm />} />
