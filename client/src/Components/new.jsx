@@ -62,7 +62,7 @@ return (
           <div style={{ maxWidth: '400px', margin: 'auto', paddingTop: '20px' }}>
       <h2>Add new Restaurant</h2>
 
-      <label className='text-cbb26a font-bold mb-4'>Name of Restaurants:</label>
+      <label>Name of Restaurants:</label>
       <input
         type="text"
         value={restaurantName}
@@ -70,7 +70,7 @@ return (
         style={{ width: '100%', marginBottom: '10px' }}
       />
 
-      <label className='text-cbb26a font-bold mb-4'>Street</label>
+      <label>Straße:</label>
       <input
         type="text"
         value={street}
@@ -78,7 +78,7 @@ return (
         style={{ width: '100%', marginBottom: '10px' }}
       />
 
-      <label className='text-cbb26a font-bold mb-4'>Stadt:</label>
+      <label>Stadt:</label>
       <input
         type="text"
         value={city}
@@ -94,7 +94,7 @@ return (
         style={{ width: '100%', marginBottom: '10px' }}
       /> */}
 
-      <label className='text-cbb26a font-bold mb-4'>Website</label>
+      <label>Website:</label>
       <input
         type="text"
         value={website}
@@ -102,7 +102,7 @@ return (
         style={{ width: '100%', marginBottom: '10px' }}
       />
 
-      <label className='text-cbb26a font-bold mb-4'>Phonenumber</label>
+      <label>Telefonnummern:</label>
       <input
         type="text"
         value={phonenumbers}
