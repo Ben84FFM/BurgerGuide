@@ -8,8 +8,7 @@ const SearchRestaurant = () => {
   const [error, setError] = useState(false);
   const [visibleResults, setVisibleResults] = useState(5); // Anzahl der sichtbaren Ergebnisse
 
-  const handleSearch = async (e) => {
-    e.preventDefault();
+  const handleSearch = async () => {
     try {
       setLoading(true);
       const response = await axios.get(`http://localhost:5000/restaurant/search?restaurant=${search}`, { withCredentials: true });
@@ -25,6 +24,18 @@ const SearchRestaurant = () => {
 
   const handleLoadMore = () => {
     setVisibleResults((prevVisibleResults) => prevVisibleResults + 5);
+  };
+
+  const handleInputChange = (e) => {
+    setSearch(e.target.value);
+    // Hier rufe die handleSearch Funktion auf, um die Ergebnisse zu aktualisieren
+    handleSearch();
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Hier rufe die handleSearch Funktion auf, um die Ergebnisse zu aktualisieren
+    handleSearch();
   };
 
   return (
@@ -44,11 +55,11 @@ const SearchRestaurant = () => {
           <div className="text-center bg-opacity-70">
             <div className='bg-black container mx-auto max-w-md rounded-xl shadow-xl shadow-gray-500'>
               <div className="max-w-md mx-auto p-4">
-                <form onSubmit={handleSearch} className="flex items-center space-x-2">
+                <form onSubmit={handleSubmit} className="flex items-center space-x-2">
                   <input
                     type="text"
                     value={search}
-                    onChange={(e) => setSearch(e.target.value)}
+                    onChange={handleInputChange}
                     placeholder="Search..."
                     className="flex-grow px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-cbb26a"
                   />
