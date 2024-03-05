@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const SearchRestaurant = () => {
@@ -6,27 +6,30 @@ const SearchRestaurant = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const [visibleResults, setVisibleResults] = useState(5); // Anzahl der sichtbaren Ergebnisse
+  const [visibleResults, setVisibleResults] = useState(5);
 
-  const handleSearch = async () => {
-    try {
-      setLoading(true);
-      // Wenn das Suchfeld leer ist, setze die Suchergebnisse auf einen leeren Array
-      if (search.trim() === '') {
-        setSearchResults([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        if (search.trim() === '') {
+          setSearchResults([]);
+          setLoading(false);
+          return;
+        }
+        const response = await axios.get(`http://localhost:5000/restaurant/search?restaurant=${search}`, { withCredentials: true });
+        setSearchResults(response.data);
         setLoading(false);
-        return;
+        setVisibleResults(5);
+      } catch (error) {
+        console.error(error);
+        setError(true);
+        setLoading(false);
       }
-      const response = await axios.get(`http://localhost:5000/restaurant/search?restaurant=${search}`, { withCredentials: true });
-      setSearchResults(response.data);
-      setLoading(false);
-      setVisibleResults(5); // Zurücksetzen auf die ersten 5 Ergebnisse nach jeder neuen Suche
-    } catch (error) {
-      console.error(error);
-      setError(true);
-      setLoading(false);
-    }
-  };
+    };
+
+    fetchData();
+  }, [search]);
 
   const handleLoadMore = () => {
     setVisibleResults((prevVisibleResults) => prevVisibleResults + 5);
@@ -34,14 +37,10 @@ const SearchRestaurant = () => {
 
   const handleInputChange = (e) => {
     setSearch(e.target.value);
-    // Hier rufe die handleSearch Funktion auf, um die Ergebnisse zu aktualisieren
-    handleSearch();
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Hier rufe die handleSearch Funktion auf, um die Ergebnisse zu aktualisieren
-    handleSearch();
   };
 
   return (
