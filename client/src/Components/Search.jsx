@@ -17,7 +17,7 @@ function Search() {
       try {
         const response = await axios.get(`http://localhost:5000/restaurant`, {
           params: {
-            limit: visibleRestaurants, 
+            limit: visibleRestaurants,
           },
         });
         setRestaurants(response.data);
@@ -39,8 +39,8 @@ function Search() {
       try {
         const response = await axios.get(`http://localhost:5000/restaurant`, {
           params: {
-            limit: 5, 
-            skip: visibleRestaurants, 
+            limit: 5,
+            skip: visibleRestaurants,
           },
         });
         setRestaurants((prevRestaurants) => [...prevRestaurants, ...response.data]);
@@ -76,29 +76,23 @@ function Search() {
   }
 
   return (
-    <div className="containerBG bg-black">
+    <div className="containerBG bg-black flex flex-row ">
       <div className="containerImg flex flex-col items-center max-w-screen-xl mx-auto relative">
         <img
           src="../src/assets/LandingPage.jpg"
           alt="LandingPageLogo"
-          className="w-full object-fill h-auto max-w-screen-xl"
-        />
+          className="w-full object-fill h-auto max-w-screen-xl" />
         <img
           src="../src/assets/LandingPageLogo2.jpg"
           alt="LandingPageLogo2"
-          className="w-full object-fill h-auto max-w-screen-xl"
-        />
-        
+          className="w-full object-fill h-auto max-w-screen-xl" />
+
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-70 border-slate-50 rounded-xl ">
-          <div className="flex flex-col items-center p-4">
-            <div className="flex justify-center w-full mb-4">
-              <SearchRestaurant to="/addRestaurants/" element={<SearchRestaurant />} />
-            </div>
+          <div className="flex flex-row items-center p-4">
             <div
               className="flex flex-wrap justify-center w-full scroll-container"
               onScroll={handleScroll}
-              style={{ overflowY: 'auto', maxHeight: '70vh' }}
-            >
+              style={{ overflowY: 'auto', maxHeight: '70vh' }}>
               {restaurants.map((rest) => {
                 const formattedDate = rest.date
                   ? format(new Date(rest.date), 'MMM dd, yyyy @HH:mm')
@@ -106,13 +100,12 @@ function Search() {
                 return (
                   <div
                     className="container mx-auto max-w-md mt-20 rounded-xl shadow-xl shadow-gray-500"
-                    key={rest._id}
-                  >
+                    key={rest._id}>
                     <div className="Card overflow-hidden border-2 bg-white border-slate-50 rounded-xl shadow-xl shadow-gray-500 flex flex-col justify-between">
                       <div className="flex flex-col m-4">
                         <h2 className="text-cbb26a text-sm sm:text-base md:text-lg lg:text-base xl:text-lg font-semibold mb-2 sm:mb-3 text-center">
-                          <Link to={'/restaurant/' + rest._id}>{rest.restaurant}</Link>
-                        </h2>
+                          <Link to={'/restaurant/' + rest._id}>{rest.restaurant}</Link></h2>
+
                         {rest.website && (
                           <p className="text-gray-600 text-xs sm:text-sm mb-2">
                             <Link to={rest.website} target="_blank" rel="noopener noreferrer">
@@ -133,6 +126,7 @@ function Search() {
           <div className="containerTextBox text-center"></div>
         </div>
       </div>
+      <div className="SearchFuntion flex justify-center w-full mb-4"><SearchRestaurant element={<SearchRestaurant />} /></div>
     </div>
   );
 }
