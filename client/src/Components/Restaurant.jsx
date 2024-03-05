@@ -52,10 +52,6 @@ function Restaurant() {
         <h4 >  {rest.street}  </h4>
         <h4 >  {rest.city}  </h4>
 
-
-
-
-
         {/* <h4 >  {rest.website}  </h4>
       <h4 >  {rest.phonenumbers}  </h4>
       <h4 >  {rest.rating}  </h4> */}
