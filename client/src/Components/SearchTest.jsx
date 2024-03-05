@@ -11,6 +11,12 @@ const SearchRestaurant = () => {
   const handleSearch = async () => {
     try {
       setLoading(true);
+      // Wenn das Suchfeld leer ist, setze die Suchergebnisse auf einen leeren Array
+      if (search.trim() === '') {
+        setSearchResults([]);
+        setLoading(false);
+        return;
+      }
       const response = await axios.get(`http://localhost:5000/restaurant/search?restaurant=${search}`, { withCredentials: true });
       setSearchResults(response.data);
       setLoading(false);
@@ -39,7 +45,7 @@ const SearchRestaurant = () => {
   };
 
   return (
-    <div className="containerBG bg-black ">
+    <div className="containerBG bg-black">
       <div className="containerImg flex flex-col items-center max-w-screen-xl mx-auto relative ">
         <img
           src="../src/assets/LandingPage.jpg"
@@ -53,7 +59,7 @@ const SearchRestaurant = () => {
         />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center bg-black border-slate-50 rounded-xl shadow-xl shadow-gray-500">
           <div className="text-center bg-opacity-70">
-            <div className='bg-black container mx-auto max-w-md rounded-xl shadow-xl shadow-gray-500'>
+            <div className="bg-black container mx-auto max-w-md rounded-xl shadow-xl shadow-gray-500">
               <div className="max-w-md mx-auto p-4">
                 <form onSubmit={handleSubmit} className="flex items-center space-x-2">
                   <input
@@ -74,10 +80,15 @@ const SearchRestaurant = () => {
                 {error && <p>Error loading results.</p>}
                 {searchResults.length > 0 && (
                   <div>
-                    <h2 className='text-cbb26a mb-2'>Your Results</h2>
+                    <h2 className="text-cbb26a mb-2">Your Results</h2>
                     <ul>
                       {searchResults.slice(0, visibleResults).map((result) => (
-                        <li className="text-cbb26a container mx-auto max-w-md mt-20 rounded-xl shadow-xl shadow-gray-500" key={result._id}>{result.restaurant}</li>
+                        <li
+                          className="text-cbb26a container mx-auto max-w-md mt-20 rounded-xl shadow-xl shadow-gray-500 bg-white"
+                          key={result._id}
+                        >
+                          {result.restaurant}
+                        </li>
                       ))}
                     </ul>
                     {searchResults.length > visibleResults && (
