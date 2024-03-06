@@ -2,7 +2,6 @@ import { useState } from 'react'
 import './App.css'
 import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
-import BurgerRating from './Components/BurgerRating'
 import { Route, Routes } from 'react-router-dom'
 import HeroSection from './Components/Hero'
 import RegisterForm from './Components/RegisterForm'
@@ -12,6 +11,7 @@ import AddRestaurantForm from './Components/addRestaurant'
 import AboutUs from './Components/AboutUs'
 import SearchTest from './Components/SearchTest'
 import StoreDetails from './Components/StoreDetail'
+
 
 import Restaurant from './Components/Restaurant'
 
@@ -28,9 +28,8 @@ function App() {
   <Route path='/register' element={<RegisterForm />} />
   <Route path='/login' element={<LoginForm />} />
   <Route path="/store/:storeId" element={<StoreDetails />} />
-  {/* <Route path='/posts' element={<Post />} /> */}
-  <Route path='/rating' element={<BurgerRating />} />
   <Route path='/addrestaurant' element={<AddRestaurantForm />} />
+  {/* <Route path='/reviewStore' element={<reviewStoreForm />} /> */}
 </Routes>
       <Footer />
     </>
