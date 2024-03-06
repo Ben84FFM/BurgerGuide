@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom'; // Neu hinzugefügt
+import { Link } from 'react-router-dom';
 
 const SearchRestaurant = () => {
   const [search, setSearch] = useState('');
