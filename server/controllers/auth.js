@@ -31,8 +31,6 @@ export const signUp = asyncHandler(async (req, res, next) => {
     password: hash,
   });
   const token = jwt.sign({ uid: newUser._id }, process.env.JWT_SECRET);
-  //   const token = jwt.sign({ uid: newUser }, process.env.JWT_SECRET);
-  //   const token = jwt.sign({ uid: newUser }, process.env.JWT_SECRET, {expiresIn '30m'});
   res.status(201).send({ token });
 });
 
