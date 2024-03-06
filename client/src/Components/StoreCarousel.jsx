@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import Slider from 'react-slick';
-import { Link } from 'react-router-dom'; // Importiere die Link-Komponente
+import { Link } from 'react-router-dom'; 
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -31,11 +31,11 @@ const StoreCarousel = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 800,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 5000,
   };
 
   useEffect(() => {
@@ -51,6 +51,10 @@ const StoreCarousel = () => {
 
   if (loading) {
     return <p className="text-center">Loading...</p>;
+ 
+ 
+ 
+ 
   }
 
   if (error) {
@@ -62,9 +66,11 @@ const StoreCarousel = () => {
     return <p className="text-center text-red-500">Error loading stores data.</p>;
   }
 
+
+  
   return (
     <div className="text-center px-4 lg:px-0">
-      <h2 className="text-2xl lg:text-3xl xl:text-4xl text-cbb26a font-bold mb-6">Featured Stores</h2>
+      <h2 className="text-2xl lg:text-3xl xl:text-4xl text-cbb26a font-bold mb-6">Burger & BBQ Stores</h2>
       <Slider {...settings} className="mx-auto max-w-screen-lg">
         {stores.map((store) => (
           <div key={store._id} className="flex items-center px-2 lg:px-4">
