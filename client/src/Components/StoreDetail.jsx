@@ -15,8 +15,9 @@ const StoreDetails = () => {
         const response = await axios.get(
           `http://localhost:5000/stores/${storeId}`
         );
-        setStore(response.data);
+        setStore(response.data.data);
         setLoading(false);
+        console.log(response.data);
       } catch (error) {
         console.error(error);
         setError(true);
@@ -47,7 +48,9 @@ const StoreDetails = () => {
 
   return (
     <div>
-      <h2 className='text-lg'>{store.name}</h2>
+      <h2 className='text-lg'>{store.store.name}</h2>
+      {console.log(store.store.image)}
+<img src={store.store.images} alt={store.store.name} width="15%"/>
     </div>
   );
 };

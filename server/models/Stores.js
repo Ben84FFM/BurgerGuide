@@ -34,7 +34,7 @@ const storeSchema = new Schema({
   },
   website: String,
   phonenumbers: [String],
-  images: [String],
+  images: String,
 });
 
 storeSchema.index({ location: '2dsphere' });
