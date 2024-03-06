@@ -1,21 +1,20 @@
+import StoreCarousel from "./StoreCarousel";
+
 const HeroSection = () => {
   return (
     <div className="containerBG bg-black ">
       <div className="containerImg flex flex-col items-center max-w-screen-xl mx-auto relative"> 
         {/* ImageTop */}
-        <img
-          src="../src/assets/LandingPage.jpg"
-          alt="LandingPageLogo"
-          className="w-full object-fill h-auto max-w-screen-xl"
-        />
-  
+        <StoreCarousel        />
+    
         {/* ImageBottom */}
         <img
           src="../src/assets/LandingPageLogo2.jpg"
           alt="LandingPageLogo2"
           className="w-full object-fill h-auto max-w-screen-xl"
         />
-  
+        {/* Carousel */}
+
         {/* Container mit dem Text und dem Bild */}
         <div className="containerLogoTextBox bg-opacity-80 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center bg-black rounded-xl ">
           <img
