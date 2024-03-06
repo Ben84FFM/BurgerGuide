@@ -47,14 +47,15 @@ const StoreCarousel = () => {
     return <p className="text-center text-red-500">Error loading stores data.</p>;
   }
 
+
   return (
-    <div className="text-center">
-      <h2 className="text-2xl font-bold mb-6">Featured Stores</h2>
+    <div className="text-center px-4 lg:px-0">
+      <h2 className="text-2xl lg:text-3xl xl:text-4xl text-cbb26a font-bold mb-6">Featured Stores</h2>
       <Slider {...settings} className="mx-auto max-w-screen-lg">
         {stores.map((store) => (
-          <div key={store._id} className="px-4">
-            <div className="bg-white rounded-lg p-6 shadow-md">
-              <h3 className="text-lg font-semibold mb-2">{store.name}</h3>
+          <div key={store._id} className="px-2 lg:px-4">
+            <div className="bg-white rounded-lg p-4 lg:p-6 shadow-md">
+              <h3 className="text-lg lg:text-xl xl:text-2xl text-cbb26a font-bold mb-2">{store.name}</h3>
               <p className="text-gray-600 mb-2">{store.phonenumbers}</p>
               <p className="text-blue-500 mb-2">{store.website}</p>
             </div>

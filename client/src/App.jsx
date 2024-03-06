@@ -12,8 +12,7 @@ import AddRestaurantForm from './Components/addRestaurant'
 import AboutUs from './Components/AboutUs'
 import SearchTest from './Components/SearchTest'
 import StoreDetails from './Components/StoreDetail'
-import StoreCarousel from './Components/StoreCarousel'
-// import Search from './Components/Search'
+
 import Restaurant from './Components/Restaurant'
 
 function App() {
