@@ -51,7 +51,7 @@ const StoreDetails = () => {
     <div className="flex flex-col lg:flex-row items-center justify-center  p-4 lg:p-8">
       <div className="w-full lg:w-1/2 lg:mr-4 bg-black bg-opacity-50 p-4 lg:p-8 mb-4 lg:mb-0">
         <h2 className="text-xl lg:text-2xl xl:text-3xl text-cbb26a font-bold mb-4 lg:mb-6">{store.store.name}</h2>
-        {console.log(store.store.image)}
+       
         <img src={store.store.images} alt={store.store.name} className="w-full lg:w-3/4 mx-auto rounded-md shadow-lg" />
       </div>
   
