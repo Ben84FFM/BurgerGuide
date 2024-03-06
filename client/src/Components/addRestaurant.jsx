@@ -20,7 +20,7 @@ const AddRestaurantForm = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:5000/restaurant', restaurantData);
+      const response = await axios.post('http://localhost:5000/stores', restaurantData);
 
       if (response.status === 201) {
         alert('Restaurant erfolgreich hinzugefügt!');
@@ -66,7 +66,7 @@ return (
       <input
         type="text"
         value={restaurantName}
-        onChange={(e) => setRestaurantName(e.target.value)}
+        onChange={(e) => setStoreName(e.target.value)}
         style={{ width: '100%', marginBottom: '10px' }}
       />
 

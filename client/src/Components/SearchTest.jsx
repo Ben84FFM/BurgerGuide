@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
@@ -89,12 +89,13 @@ const SearchRestaurant = () => {
                     <h2 className='text-cbb26a mb-2'>Your Results</h2>
                     <ul>
                       {searchResults.slice(0, visibleResults).map((result) => (
-                        <li
-                          className='text-cbb26a container mx-auto max-w-md mt-20 rounded-xl shadow-xl shadow-gray-500 bg-white'
-                          key={result._id}
-                        >
-                          {result.name}
-                        </li>
+                        <Link
+                        to={`/store/${result._id}`}
+                        key={result._id}
+                        className='text-cbb26a container mx-auto max-w-md mt-20 rounded-xl shadow-xl shadow-gray-500 bg-white'
+                      >
+                        {result.name}
+                      </Link>
                       ))}
                     </ul>
                     {searchResults.length > visibleResults && (
