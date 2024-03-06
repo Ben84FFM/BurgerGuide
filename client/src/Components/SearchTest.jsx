@@ -1,62 +1,85 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom'; // Neu hinzugefügt
 
 const SearchRestaurant = () => {
   const [search, setSearch] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const [visibleResults, setVisibleResults] = useState(5); // Anzahl der sichtbaren Ergebnisse
+  const [visibleResults, setVisibleResults] = useState(5);
 
-  const handleSearch = async (e) => {
-    e.preventDefault();
-    try {
-      setLoading(true);
-      const response = await axios.get(`http://localhost:5000/restaurant/search?restaurant=${search}`, { withCredentials: true });
-      setSearchResults(response.data);
-      setLoading(false);
-      setVisibleResults(5); // Zurücksetzen auf die ersten 5 Ergebnisse nach jeder neuen Suche
-    } catch (error) {
-      console.error(error);
-      setError(true);
-      setLoading(false);
-    }
-  };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        if (search.trim() === '') {
+          setSearchResults([]);
+          setLoading(false);
+          return;
+        }
+        const response = await axios.get(
+          `http://localhost:5000/stores/search?store=${search}`,
+          { withCredentials: true }
+        );
+        setSearchResults(response.data);
+        setLoading(false);
+        setVisibleResults(5);
+      } catch (error) {
+        console.error(error);
+        setError(true);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [search]);
 
   const handleLoadMore = () => {
     setVisibleResults((prevVisibleResults) => prevVisibleResults + 5);
   };
 
+  const handleInputChange = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
-    <div className="containerBG bg-black ">
-      <div className="containerImg flex flex-col items-center max-w-screen-xl mx-auto relative ">
+    <div className='containerBG bg-black'>
+      <div className='containerImg flex flex-col items-center max-w-screen-xl mx-auto relative '>
         <img
-          src="../src/assets/LandingPage.jpg"
-          alt="LandingPageLogo"
-          className="w-full object-fill h-auto max-w-screen-xl"
+          src='../src/assets/LandingPage.jpg'
+          alt='LandingPageLogo'
+          className='w-full object-fill h-auto max-w-screen-xl'
         />
         <img
-          src="../src/assets/LandingPageLogo2.jpg"
-          alt="LandingPageLogo2"
-          className="w-full object-fill h-auto max-w-screen-xl"
+          src='../src/assets/LandingPageLogo2.jpg'
+          alt='LandingPageLogo2'
+          className='w-full object-fill h-auto max-w-screen-xl'
         />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center bg-black border-slate-50 rounded-xl shadow-xl shadow-gray-500">
-          <div className="text-center bg-opacity-70">
+        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center bg-black border-slate-50 rounded-xl shadow-xl shadow-gray-500'>
+          <div className='text-center bg-opacity-70'>
             <div className='bg-black container mx-auto max-w-md rounded-xl shadow-xl shadow-gray-500'>
-              <div className="max-w-md mx-auto p-4">
-                <form onSubmit={handleSearch} className="flex items-center space-x-2">
+              <div className='max-w-md mx-auto p-4 '>
+                <form
+                  onSubmit={handleSubmit}
+                  className='flex items-center space-x-2'
+                >
                   <input
-                    type="text"
+                    type='text'
                     value={search}
-                    onChange={(e) => setSearch(e.target.value)}
-                    placeholder="Search..."
-                    className="flex-grow px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-cbb26a"
+                    onChange={handleInputChange}
+                    placeholder='Search...'
+                    className='flex-grow px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-cbb26a'
                   />
                   <button
-                    type="submit"
-                    className="bg-black text-cbb26a px-4 py-2 rounded-md hover:bg-opacity-80 focus:outline-none shadow-md border border-gray-500"
+                    type='submit'
+                    className='bg-black text-cbb26a px-4 py-2 rounded-md hover:bg-opacity-80 focus:outline-none shadow-md border border-gray-500'
                   >
-                    Search Restaurant
+                    Search
                   </button>
                 </form>
                 {loading && <p>Loading...</p>}
@@ -66,17 +89,35 @@ const SearchRestaurant = () => {
                     <h2 className='text-cbb26a mb-2'>Your Results</h2>
                     <ul>
                       {searchResults.slice(0, visibleResults).map((result) => (
-                        <li className="text-cbb26a container mx-auto max-w-md mt-20 rounded-xl shadow-xl shadow-gray-500" key={result._id}>{result.restaurant}</li>
+                        <li
+                          className='text-cbb26a container mx-auto max-w-md mt-20 rounded-xl shadow-xl shadow-gray-500 bg-white'
+                          key={result._id}
+                        >
+                          {result.name}
+                        </li>
                       ))}
                     </ul>
                     {searchResults.length > visibleResults && (
                       <button
-                        className="bg-white text-cbb26a px-4 py-2 rounded-md hover:bg-opacity-80 focus:outline-none shadow-md border border-gray-500 mt-4"
+                        className='bg-white text-cbb26a px-4 py-2 rounded-md hover:bg-opacity-80 focus:outline-none shadow-md border border-gray-500 mt-4'
                         onClick={handleLoadMore}
                       >
                         Load More
                       </button>
                     )}
+                  </div>
+                )}
+                {searchResults.length === 0 && (
+                  <div>
+                    <p className='text-cbb26a mb-2"'>No results found</p>
+                    <Link to='/addRestaurant'>
+                      <p className='text-cbb26a font-bold mb-2"'>
+                        Your Favorite Store is not here?
+                      </p>
+                      <button className='bg-white text-cbb26a font-bold px-4 py-2 rounded-md hover:bg-opacity-80 focus:outline-none shadow-md border border-gray-500 mt-4'>
+                        Add your Favorite Store
+                      </button>
+                    </Link>
                   </div>
                 )}
               </div>

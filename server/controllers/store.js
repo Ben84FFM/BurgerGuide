@@ -80,3 +80,17 @@ export const deleteStore = asyncHandler(async (req, res, next) => {
     data: {},
   });
 });
+
+export const searchStores = asyncHandler(async (req, res, next) => {
+  const { store } = req.query;
+
+  const foundStores = await Store.find({
+    name: { $regex: store, $options: 'i' },
+  });
+
+  if (foundStores.length === 0) {
+    throw new ErrorResponse(`Store ${store} not found`, 404);
+  }
+
+  res.json(foundStores);
+});

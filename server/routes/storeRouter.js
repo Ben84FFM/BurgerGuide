@@ -6,6 +6,7 @@ const storeRouter = Router();
 
 storeRouter.get('/', storeController.getStores);
 storeRouter.post('/', verifyToken, storeController.createStore);
+storeRouter.get('/search', storeController.searchStores);
 
 storeRouter.get('/:id', storeController.getStoreById);
 storeRouter.put('/:id', verifyToken, storeController.updateStore);
