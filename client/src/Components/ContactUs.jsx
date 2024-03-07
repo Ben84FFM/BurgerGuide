@@ -22,7 +22,7 @@ const ContactUsButton = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Logik für die Formularübermittlung
+
     console.log('Formulardaten senden:', formData);
   };
 
