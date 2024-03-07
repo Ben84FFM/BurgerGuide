@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
+
 
 const BurgerRating = () => {
-  const [restaurant, setRestaurant] = useState(null); // State für das Restaurant-Objekt
+  const { storeId } = useParams();
+
+  const [store, setStore] = useState(null);
   const [ratings, setRatings] = useState({
     cleanliness: 0,
     taste: 0,
@@ -24,15 +28,21 @@ const BurgerRating = () => {
 
   const handleSubmit = async () => {
     setSubmitted(true);
-  
+
     try {
-      if (restaurant && restaurant._id) {
-        await axios.post('http://localhost:5173/submit-rating', {
-          restaurantId: restaurant._id,
-          ratings: { ...ratings },
+      if (store && store._id) {
+        await axios.post(`http://localhost:5173/reviews`, { 
+          storeId: store._id, 
+          cleanliness: ratings.cleanliness,
+          taste: ratings.taste,
+          service: ratings.service,
+          priceValue: ratings.priceValue,
+          ambience: ratings.ambience,
+          waitTime: ratings.waitTime,
+          locationRating: ratings.locationRating,
         });
       } else {
-        console.error('Ungültiges oder fehlendes Restaurant-Objekt');
+        console.error('Ungültiges oder fehlendes Store-Objekt:', store);
       }
     } catch (error) {
       console.error('Fehler beim Übermitteln der Bewertung:', error.message);
@@ -40,45 +50,34 @@ const BurgerRating = () => {
   };
 
   useEffect(() => {
-    if (submitted && restaurant) {
+    if (submitted && store) {
       const totalStars = Object.values(ratings).reduce((total, rating) => total + rating, 0);
       const totalCategories = Object.keys(ratings).length;
       const newAverageRating = totalStars > 0 ? totalStars / totalCategories : 0;
       setAverageRating(newAverageRating);
     }
-  }, [submitted, ratings, restaurant]);
-
+  }, [submitted, ratings, store]);
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('Ihre_API_Endpoint_Hier'); 
-      setRestaurant(response.data);
+      const response = await axios.get(`http://localhost:5173/stores/${storeId}`);
+      setStore(response.data);
     } catch (error) {
-      console.error('Fehler beim Laden der Restaurantdaten:', error.message);
+      console.error('Fehler beim Laden der Store-Daten:', error.message);
     }
   };
 
   useEffect(() => {
-    fetchData(); 
-  }, []);
+    fetchData();
+  }, [storeId]);
 
-  if (!restaurant) {
-    return <p>Lade Restaurantdaten...</p>;
+  if (!store) {
+    return <p>Lade Store-Daten...</p>;
   }
 
   return (
     <div className="max-w-screen-md mx-auto mt-8 p-4 bg-black rounded-md shadow">
-      <h2 className="text-2xl font-bold text-cbb26a mb-4">Burger Rating für {restaurant.store.name}</h2>
-
-      <div className="mb-4">
-        <p className="text-lg font-semibold text-cbb26a mb-2">Name of the Restaurant:</p>
-        <input
-          type="text"
-          value={restaurant._id}
-          onChange={(e) => setRestaurantId(e.target.value)}
-          className="p-2 border rounded-md"
-        />
-      </div>
+      <h2 className="text-2xl font-bold text-cbb26a mb-4">Burger Rating für {store.name}</h2>
 
       {Object.keys(ratings).map((category) => (
         <div key={category} className="mb-4">

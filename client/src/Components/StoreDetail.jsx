@@ -19,7 +19,6 @@ const StoreDetails = () => {
         );
         setStore(response.data.data);
         setLoading(false);
-        console.log(response.data);
       } catch (error) {
         console.error(error);
         setError(true);
@@ -48,9 +47,9 @@ const StoreDetails = () => {
     return <p>Store not found.</p>;
   }
 
+
   return (
     <div className="bg-black text-white">
-      {/* Container mit dem Text und dem Bild */}
       <div className="containerBG bg-black bg-opacity-70 flex flex-col items-center rounded-xl p-8 lg:p-16">
         <div className="flex flex-row lg:flex-row items-center justify-center mb-8 lg:mb-0">
 
@@ -70,6 +69,11 @@ const StoreDetails = () => {
               alt={store.store.name}
               className="w-full rounded-md shadow-lg"
             />
+          </div>
+          <div className="w-full lg:w-1/2 p-8">
+            <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-cbb26a mb-4">
+              Reviews from Users
+            </h3>
             <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-cbb26a mb-4">Reviews from Users</h3>
             <ul className="list-disc">
               <li className="mb-2 text-cbb26a font-bold">Beste Burger in der Stadt!</li>
@@ -105,6 +109,7 @@ const StoreDetails = () => {
             </h3>
           </div>
 
+
           <div className="w-full lg:w-1/2 p-8 lg:ml-4 hidden lg:block">
 
             <Link to="/reviewStore">
@@ -118,10 +123,6 @@ const StoreDetails = () => {
 
     </div>
   );
-}
+};
 
 export default StoreDetails;
-
-
-
-

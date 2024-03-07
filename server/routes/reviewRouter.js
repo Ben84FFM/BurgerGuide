@@ -4,6 +4,6 @@ import verifyToken from '../middlewares/verifyToken.js';
 
 const reviewRouter = Router();
 
-reviewRouter.post('/', verifyToken, reviewController.createReview);
+reviewRouter.post('/:storeId', verifyToken, reviewController.createReview);
 
 export default reviewRouter;
