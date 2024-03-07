@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import StoreCarouselSearch from './StoreCarouselSearch';
 
 const SearchRestaurant = () => {
   const [search, setSearch] = useState('');
@@ -60,6 +61,7 @@ const SearchRestaurant = () => {
           alt='LandingPageLogo2'
           className='w-full object-fill h-auto max-w-screen-xl'
         />
+      <StoreCarouselSearch />
         <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center bg-black border-slate-50 rounded-xl shadow-xl shadow-gray-500'>
           <div className='text-center bg-opacity-70'>
             <div className='bg-black container mx-auto max-w-md rounded-xl shadow-xl shadow-gray-500'>
