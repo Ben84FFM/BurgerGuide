@@ -5,7 +5,6 @@ import asyncHandler from '../utils/asyncHandler.js';
 export const createReview = asyncHandler(async (req, res, next) => {
   const {
     storeId,
-    rating,
     comment,
     cleanliness,
     taste,
@@ -17,7 +16,7 @@ export const createReview = asyncHandler(async (req, res, next) => {
   } = req.body;
 
   const review = await Review.create({
-    store: storeId,
+    store: storeId, // Statt storeId: storeId
     user: req.uid,
     comment,
     cleanliness,
