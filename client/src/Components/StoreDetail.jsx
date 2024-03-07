@@ -100,11 +100,11 @@ const StoreDetails = () => {
 
           <div className="w-full lg:w-1/2 p-8 lg:ml-4 hidden lg:block">
 
-            <Link to="/reviewStore">
-              <button className="border-2 border-cbb26a text-cbb26a px-6 py-2 rounded-md mt-4 hover:bg-cbb26aHover">
-                Rate this store
-              </button>
-            </Link>
+          <Link to={`/reviewStore/${storeId}`}>
+  <button className="border-2 border-cbb26a text-cbb26a px-6 py-2 rounded-md mt-4 hover:bg-cbb26a hover:text-white transition duration-300 ease-in-out focus:outline-none">
+    Rate this store
+  </button>
+</Link>
           </div>
         </div>
       </div>
