@@ -12,18 +12,24 @@ const AddStoreForm = () => {
     const storeData = {
       name: storeName,
       street: street,
+      location: location,
       city: city,
       website: website,
       phonenumbers: [phonenumbers],
     };
-  
+
+    console.log('Sending data to server:', storeData);
+
     try {
-      console.log('Sending data to server:', storeData);
-  
-      const response = await axios.post('http://localhost:5000/stores', storeData, { withCredentials: true });
-  
+      const response = await axios.post('http://localhost:5000/stores', storeData, {
+        withCredentials: true,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
       console.log('Server response:', response);
-  
+
       if (response.status === 201) {
         alert('Store erfolgreich hinzugefügt!');
       } else {
