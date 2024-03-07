@@ -13,8 +13,6 @@ import SearchTest from './Components/SearchTest'
 import StoreDetails from './Components/StoreDetail'
 
 
-import Restaurant from './Components/Restaurant'
-
 function App() {
 
   return (
@@ -23,7 +21,6 @@ function App() {
       <Routes>
   <Route path="/about" element={<AboutUs />} />
   <Route path="/burgerstores" element={<SearchTest />} />
-  <Route path='/restaurant/:id' element={<Restaurant />} />
   <Route path="/" element={<HeroSection />} />
   <Route path='/register' element={<RegisterForm />} />
   <Route path='/login' element={<LoginForm />} />
