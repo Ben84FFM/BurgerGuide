@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
 
 const StoreDetails = () => {
   const { storeId } = useParams();
@@ -69,8 +70,6 @@ const StoreDetails = () => {
               alt={store.store.name}
               className="w-full rounded-md shadow-lg"
             />
-          </div>
-          <div className="w-full lg:w-1/2 p-8">
             <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-cbb26a mb-4">
               Reviews from Users
             </h3>
@@ -80,26 +79,15 @@ const StoreDetails = () => {
               <li className="mb-2 text-cbb26a font-bold">Fantastischer Service!</li>
             </ul>
           </div>
+          <div className="w-full lg:w-1/2 p-8">
+          </div>
 
           <div className="w-full lg:w-1/2 p-8">
-            {/* <MapContainer zoom={12} style={{ height: '300px', width: '100%', borderRadius: '10px', border: '2px solid  #b8860b', }}
-              center={store.store.location.coordinates[0]}>
-              <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
-              <Marker position={store.store.location.coordinates[1]}></Marker>
-            </MapContainer> */}
-            <MapContainer zoom={12} style={{ height: '300px', width: '100%', borderRadius: '10px', border: '2px solid  #b8860b', }} center={store.store.location.coordinates}>
+            <MapContainer zoom={12} style={{ height: '400px', width: '100%', borderRadius: '10px', border: '2px solid  #b8860b', }} center={store.store.location.coordinates}>
               <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
               <Marker position={store.store.location.coordinates}></Marker>
             </MapContainer>
-
-            {console.log(store.store.location.coordinates[0])}
-            {console.log(store.store.location.coordinates[1])}
-            {console.log(store.store.location.coordinates)}
           </div>
-
-
-
-
         </div>
 
         <div className="flex flex-col lg:flex-row items-center justify-center">
