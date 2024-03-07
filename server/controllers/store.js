@@ -6,6 +6,11 @@ import ErrorResponse from '../utils/ErrorResponse.js';
 export const createStore = asyncHandler(async (req, res, next) => {
   const { name, location, address, website, phonenumbers, images } = req.body;
 
+
+  if (!name || !location || !address) {
+    throw new ErrorResponse('Name, Standort und Adresse sind erforderliche Felder', 400);
+  }
+
   const store = await Store.create({
     name,
     location,
