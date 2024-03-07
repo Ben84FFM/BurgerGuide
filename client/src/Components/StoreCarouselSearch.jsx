@@ -32,10 +32,12 @@ const StoreCarouselSearch = () => {
     dots: true,
     infinite: true,
     speed: 800,
-    slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToShow: 5, 
+    slidesToScroll: 5,
     autoplay: true,
     autoplaySpeed: 5000,
+    vertical: true, 
+    verticalSwiping: true, 
   };
 
   useEffect(() => {
@@ -63,7 +65,7 @@ const StoreCarouselSearch = () => {
   }
 
   return (
-    <div className="text-center px-4 lg:px-0 carousel-container"> {/* Hinzugefügte CSS-Klasse */}
+    <div className="text-center px-4 lg:px-0 carousel-container"> 
       <h2 className="text-2xl lg:text-3xl xl:text-4xl text-cbb26a font-bold mb-6">Burger & BBQ Stores</h2>
       <Slider {...settings} className="mx-auto max-w-screen-lg">
         {stores.map((store) => (

@@ -10,7 +10,8 @@ import AddStoreForm from './Components/addStore';
 import AboutUs from './Components/AboutUs';
 import SearchTest from './Components/SearchTest';
 import StoreDetails from './Components/StoreDetail';
-import BurgerRating from './Components/StoreRating'; 
+import BurgerRating from './Components/StoreRating';
+import PrivacyPolicy from './Components/dataPolicy';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/store/:storeId" element={<StoreDetails />} />
         <Route path='/addRestaurant' element={<AddStoreForm />} />
         <Route path="/reviewStore/:storeId" element={<BurgerRating />} />
+        <Route path="/policy" element={<PrivacyPolicy />} />
       </Routes>
       <Footer />
     </>
