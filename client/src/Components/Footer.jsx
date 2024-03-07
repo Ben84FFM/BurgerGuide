@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PrivacyPolicy from './dataPolicy';
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,10 +10,6 @@ const Footer = () => {
   <div className="container mx-auto flex flex-wrap justify-center lg:justify-between">
     <div className="footer-section mb-4 lg:mb-0">
       <h4 className="text-cbb26a text-lg font-bold mb-2">Impressum</h4>
-      <p className="text-cbb26a mb-1">BurgerGuide</p>
-      <p className="text-cbb26a mb-1">Straße</p>
-      <p className="text-cbb26a mb-1">Email</p>
-      <p className="text-cbb26a mb-1">Telefonnummer</p>
       <Link to='/about' className='cursor-pointer hover:opacity-80 text-cbb26a mb-1'><p className='text-lg'>About BurgerGuide</p></Link>
       <Link to='/burgerstores' className='cursor-pointer hover:opacity-80 text-cbb26a mb-1'><p className='text-lg'>Stores</p></Link>
       <Link to='/' className='cursor-pointer hover:opacity-80 text-cbb26a mb-1'><p className='text-lg'>Home</p></Link>

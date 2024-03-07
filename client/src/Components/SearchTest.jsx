@@ -100,15 +100,9 @@ const SearchRestaurant = () => {
           )}
           {searchResults.length === 0 && (
             <div className="text-cbb26a text-center mt-4">
-              <p className="mb-2">No results found</p>
-              <Link to="/addRestaurant" className="block mb-2">
-                <span className="font-bold">
-                  Your Favorite Store is not here?
-                </span>
-              </Link>
-              <button className="bg-white text-cbb26a font-bold px-4 py-2 rounded-md hover:bg-opacity-80 focus:outline-none shadow-md border border-gray-500">
-                Add your Favorite Store
-              </button>
+             <Link to="/addRestaurant" className="inline-block bg-white text-cbb26a font-bold px-4 py-2 rounded-md transition duration-300 ease-in-out hover:bg-black hover:text-cbb26a focus:outline-none shadow-md border border-gray-500">
+      Your Favorite Store is not here?
+    </Link>
             </div>
           )}
         </div>
