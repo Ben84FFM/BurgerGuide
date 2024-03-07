@@ -7,7 +7,7 @@ import HeroSection from './Components/Hero'
 import RegisterForm from './Components/RegisterForm'
 import LoginForm from './Components/LoginForm'
 import Post from './Components/Post'
-import AddRestaurantForm from './Components/addRestaurant'
+import AddStoreForm from './Components/addStore'
 import AboutUs from './Components/AboutUs'
 import SearchTest from './Components/SearchTest'
 import StoreDetails from './Components/StoreDetail'
@@ -25,7 +25,7 @@ function App() {
   <Route path='/register' element={<RegisterForm />} />
   <Route path='/login' element={<LoginForm />} />
   <Route path="/store/:storeId" element={<StoreDetails />} />
-  <Route path='/addrestaurant' element={<AddRestaurantForm />} />
+  <Route path='/addRestaurant' element={<AddStoreForm />} />
   {/* <Route path='/reviewStore' element={<reviewStoreForm />} /> */}
 </Routes>
       <Footer />
