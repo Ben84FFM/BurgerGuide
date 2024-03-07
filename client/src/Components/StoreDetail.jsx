@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const StoreDetails = () => {
   const { storeId } = useParams();
@@ -83,11 +84,11 @@ const StoreDetails = () => {
           </div>
 
           <div className="w-full lg:w-1/2 p-8 lg:ml-4 hidden lg:block">
-            <Link to={`/reviewStore/${storeId}`}>
-              <button className="border-2 border-cbb26a text-cbb26a px-6 py-2 rounded-md mt-4 hover:bg-cbb26aHover">
-                Rate this store
-              </button>
-            </Link>
+          <Link to={`/reviewStore/${storeId}`}>
+  <button className="border-2 border-cbb26a text-cbb26a px-6 py-2 rounded-md mt-4 hover:bg-cbb26aHover">
+    Rate this store
+  </button>
+</Link>
           </div>
         </div>
       </div>

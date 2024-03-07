@@ -25,7 +25,7 @@ function App() {
         <Route path='/login' element={<LoginForm />} />
         <Route path="/store/:storeId" element={<StoreDetails />} />
         <Route path='/addRestaurant' element={<AddStoreForm />} />
-        <Route path='/reviewStore/:storeId' element={<BurgerRating />} />
+        <Route path="/reviewStore/:storeId" element={<BurgerRating />} />
       </Routes>
       <Footer />
     </>
