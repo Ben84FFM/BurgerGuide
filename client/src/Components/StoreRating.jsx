@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
+
 const BurgerRating = () => {
   const { storeId } = useParams();
+
   const [store, setStore] = useState(null);
   const [ratings, setRatings] = useState({
     cleanliness: 0,
@@ -30,7 +32,7 @@ const BurgerRating = () => {
     try {
       if (store && store._id) {
         await axios.post(`http://localhost:5173/reviews`, { 
-          storeId: store._id,
+          storeId: store._id, 
           cleanliness: ratings.cleanliness,
           taste: ratings.taste,
           service: ratings.service,
@@ -40,7 +42,7 @@ const BurgerRating = () => {
           locationRating: ratings.locationRating,
         });
       } else {
-        console.error('Ungültiges oder fehlendes Store-Objekt');
+        console.error('Ungültiges oder fehlendes Store-Objekt:', store);
       }
     } catch (error) {
       console.error('Fehler beim Übermitteln der Bewertung:', error.message);
@@ -58,7 +60,7 @@ const BurgerRating = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`http://localhost:5173/restaurants/${storeId}`);
+      const response = await axios.get(`http://localhost:5173/stores/${storeId}`);
       setStore(response.data);
     } catch (error) {
       console.error('Fehler beim Laden der Store-Daten:', error.message);
