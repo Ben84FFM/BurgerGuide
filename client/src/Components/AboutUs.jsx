@@ -3,11 +3,10 @@ import StackCarousel from './StackCarousel';
 
 const AboutUs = () => {
   return (
-    
-    <div className="MainContainer bg-cover" style={{ backgroundImage: `url('../src/assets/LandingPageLogo2.jpg')` }}>
-      {/* Logo und Textfeld Container */}
+        <div className="MainContainer bg-cover" style={{ backgroundImage: `url('../src/assets/LandingPageLogo2.jpg')` }}>
+
+      <div className="ShadowContainer">
       <div className='ContainerBildText flex flex-row relative space-x-8'>
-        {/* Bild mit sexyBorder */}
         <div className="LogoImage LogoBorder">
           <img
             src="../src/assets/BurgerGuideLogo2.png"
@@ -17,12 +16,7 @@ const AboutUs = () => {
           <div className="LogoBorder"></div>
         </div>
 
-
-<div className='bg-black opacity-70'> 
-</div>
-
-        {/* Textfeld */}
-        <div className="lg:w-1/2 space-y-4 bg-black p-8">
+      <div className="lg:w-1/2 space-y-4 bg-black p-8 opacity-80">
   <div className="text-cbb26a">
     <h1 className="text-3xl font-bold mb-4">Behind the Stage!</h1>
     <p className="mb-4">
@@ -45,8 +39,8 @@ const AboutUs = () => {
     </p>
   </div>
 </div>
-
-      </div>
+</div>
+</div>
 
       {/* Carousel */}
       <div className="lg:w-full mt-8 lg:mt-0 flex flex-col">
