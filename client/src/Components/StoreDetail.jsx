@@ -61,15 +61,15 @@ const StoreDetails = () => {
         <p className="text-cbb26a mb-4">{store.store.phoneNumber}</p>
       </div>
 
-      <div className="flex md:flex-row sm:flex-col flex-col justify-between ">
+      <div className="flex flex-col md:flex-row justify-between ">
 
-        <div className="w-full p-8 ">
+        <div className="w-full p-8">
           <img className="w-full rounded-md " src={store.store.images} alt={store.store.name}
             style={{ height: '100%', width: '100%', objectFit: 'cover', }} />
         </div>
 
-        <div className="w-full p-8 ">  {/* Map */}
-          <MapContainer zoom={12} style={{ height: '100%', width: '100%', borderRadius: '10px', border: '2px solid  #b8860b', }} center={store.store.location.coordinates}>
+        <div className="w-full p-8  h-32" >  {/* Map */}
+          <MapContainer zoom={12} style={{ height: '100%', width: '100%', }} center={store.store.location.coordinates}>
             <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
             <Marker position={store.store.location.coordinates}></Marker>
           </MapContainer>
