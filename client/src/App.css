@@ -45,13 +45,17 @@
   box-shadow: 0 -4px 6px rgba(141, 38, 201, 0.521);
 }
 
-.sexyBorder {
-  position: relative;
+/* LogoBorder BurgerGuideLogo about us Page*/
+
+.LogoBorder {
+  position: absolute;
   border-radius: 16px;
   overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
 }
 
-.sexyBorder::before {
+.LogoBorder::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -59,10 +63,10 @@
   background: linear-gradient(#cbb26a, #dfc472);
   animation: animate 5s linear infinite;
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
 }
 
-.sexyBorder::after {
+.LogoBorder::after {
   content: "";
   position: absolute;
   inset: 2px;
@@ -79,11 +83,74 @@
   z-index: 2;
 }
 
-.sexyBorder:hover::before {
+.LogoBorder:hover::before {
   animation-play-state: paused;
 }
 
-.sexyBorder:hover::after {
+.LogoBorder:hover::after {
+  background: #000000;
+}
+
+@keyframes animate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.LogoImage {
+  position: relative;
+  z-index: 1;
+}
+
+.LogoImage:hover .LogoBorder::before {
+  animation-play-state: paused;
+}
+
+.LogoImage:hover .LogoBorder::after {
+  background: #000000;
+}
+
+/* TechStackBorder About us Page */
+
+.TechStackBorder {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.TechStackBorder::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#6aa4cb, #589bda);
+  animation: animate 5s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.TechStackBorder::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: #000000;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: monospace;
+  font-style: italic;
+  color: #ffffff;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.TechStackBorder:hover::before {
+  animation-play-state: paused;
+}
+
+.TechStackBorder:hover::after {
   background: #000000;
 }
 

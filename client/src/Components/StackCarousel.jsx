@@ -6,8 +6,8 @@ import 'slick-carousel/slick/slick-theme.css';
 const StackCarousel = () => {
   const placeholderImages = [
     'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png',
-    'https://webimages.mongodb.com/_com_assets/cms/kuyjf3vea2hg34taa-horizontal_default_slate_blue.svg?auto=format%252Ccompress',
-    'https://nodejs.org/static/images/logo.svg',
+    'https://www.itnetwork.cz/images/46772/lekce5/mdb.png',
+    'https://media.licdn.com/dms/image/D5612AQEHlMnpL5pg7g/article-cover_image-shrink_720_1280/0/1684628937431?e=2147483647&v=beta&t=KiP3xUV_nrfkbJ5XHR8StdZVMyM6b4V9-aQZqOmQ7v4',
     'https://cdn.worldvectorlogo.com/logos/logo-javascript.svg',
   ];
 
@@ -33,12 +33,12 @@ const StackCarousel = () => {
         <Slider {...settings} className="mx-auto">
           {placeholderImages.map((image, index) => (
             <div key={index} className="flex items-center px-4">
-              <div className="flex bg-white rounded-md p-6 shadow-md">
+              <div className="flex bg-white rounded-md p-6">
                 <img
                   src={image}
                   alt={`Technology ${index + 1}`}
-                  className="w-full h-auto object-cover rounded-md mx-auto"
-                  style={{ boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)' }}
+                  className="object-cover rounded-md mx-auto"
+                  style={{ width: '100px', height: '100px' }}
                 />
               </div>
             </div>
