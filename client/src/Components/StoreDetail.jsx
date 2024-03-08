@@ -92,7 +92,7 @@ const StoreDetails = () => {
             <h3 className="text-xl font-bold text-cbb26a mt-4">Rating:<span >⭐⭐⭐⭐</span></h3>
           </div>
           <div className="  p-8">
-            <Link to="/reviewStore">
+            <Link to={`/reviewStore/${storeId}`}>
               <button className="text-xl font-bold border-2 text-cbb26a mt-4 p-2 border-cbb26a rounded-md hover:bg-cbb26aHover">
                 Rate this store</button>
             </Link>
