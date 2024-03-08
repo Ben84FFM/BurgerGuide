@@ -1,15 +1,12 @@
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       textColor: {
-        'C': 'cbb26a',
+        cbb26a: 'cbb26a',
       },
     },
   },
   variants: {},
   plugins: [],
-}
+};
