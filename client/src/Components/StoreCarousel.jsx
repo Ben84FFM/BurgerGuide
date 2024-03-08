@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import Slider from 'react-slick';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -51,10 +51,6 @@ const StoreCarousel = () => {
 
   if (loading) {
     return <p className="text-center">Loading...</p>;
- 
- 
- 
- 
   }
 
   if (error) {
@@ -66,15 +62,13 @@ const StoreCarousel = () => {
     return <p className="text-center text-red-500">Error loading stores data.</p>;
   }
 
-
-  
   return (
     <div className="text-center px-4 lg:px-0">
       <h2 className="text-2xl lg:text-3xl xl:text-4xl text-cbb26a font-bold mb-6">Burger & BBQ Stores</h2>
       <Slider {...settings} className="mx-auto max-w-screen-lg">
         {stores.map((store) => (
           <div key={store._id} className="flex items-center px-2 lg:px-4">
-            <div className="flex bg-white rounded-md p-4 lg:p-6 shadow-md" ref={containerRef}>
+            <div className="flex bg-white rounded-md p-4 lg:p-6 shadow-md">
               <Link to={`/store/${store._id}`} className="w-32 h-32">
                 <img
                   src={store.images}
