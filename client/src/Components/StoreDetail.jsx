@@ -1,47 +1,39 @@
 import React, { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet';
+import ReactStars from 'react-stars';
 import 'leaflet/dist/leaflet.css';
 
 const StoreDetails = () => {
   const { storeId } = useParams();
   const [store, setStore] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [initialLoading, setInitialLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const [reviews, setReviews] = useState([]);
+  const [averageRating, setAverageRating] = useState(0);
 
   useEffect(() => {
-    const fetchStoreDetails = async () => {
+    const fetchDetails = async () => {
+      setLoading(true);
       try {
-        const response = await axios.get(
-          `http://localhost:5000/stores/${storeId}`
-        );
-        setStore(response.data.data);
-        setLoading(false);
+        const [storeResponse, reviewsResponse] = await Promise.all([
+          axios.get(`http://localhost:5000/stores/${storeId}`),
+          axios.get(`http://localhost:5000/reviews/${storeId}`),
+        ]);
+        setStore(storeResponse.data.data);
+        setReviews(reviewsResponse.data.data.reviews);
+        setAverageRating(reviewsResponse.data.data.averageRating);
       } catch (error) {
-        console.error(error);
-        setError(true);
-        setLoading(false);
-      } finally {
-        setInitialLoading(false);
+        console.error('Error fetching data:', error);
       }
+      setLoading(false);
     };
 
-    fetchStoreDetails();
+    fetchDetails();
   }, [storeId]);
 
-  if (initialLoading) {
-    return <p>Loading...</p>;
-  }
-
   if (loading) {
-    return <p>Loading store details...</p>;
-  }
-
-  if (error) {
-    return <p>Error loading store details.</p>;
+    return <p>Loading...</p>;
   }
 
   if (!store) {
@@ -49,36 +41,49 @@ const StoreDetails = () => {
   }
 
   return (
-    <div className='containerBG flex flex-col bg-black bg-opacity-100'>
-      <div className='p-8'>
-        <h2 className='text-2xl lg:text-3xl xl:text-4xl font-bold text-cbb26a mb-4'>
-          {store.store.name}
-        </h2>
-        <p className='text-cbb26a mb-2'>
-          {`${store.store.address.street}, ${store.store.address.zipCode} ${store.store.address.city}`}
-        </p>
-        <a href={store.store.website}>
-          <p className='text-cbb26a mb-2'>{store.store.website}</p>
-        </a>
-        <p className='text-cbb26a mb-4'>{store.store.phoneNumber}</p>
+    <div className='container flex flex-col bg-black bg-opacity-100 w-full p-4'>
+      <div id='burger-store' className='p-8 flex rounded-md'>
+        <div>
+          <h2 className='text-2xl lg:text-3xl xl:text-4xl font-bold text-cbb26a'>
+            {store.store.name}
+          </h2>
+
+          <ReactStars
+            count={5}
+            size={24}
+            value={averageRating}
+            edit={false}
+            color2={'#ffd700'}
+            className='mb-4'
+          />
+          <p className='text-cbb26a mb-2'>
+            📍
+            {`${store.store.address.street}, ${store.store.address.zipCode} ${store.store.address.city}`}
+          </p>
+          <a href={store.store.website}>
+            <p className='text-cbb26a mb-2'>{store.store.website}</p>
+          </a>
+          <p className='text-cbb26a mb-4'>{store.store.phoneNumber}</p>
+        </div>
       </div>
 
-      <div className='flex flex-col md:flex-row justify-between '>
+      <div
+        id='burger-map'
+        className='flex flex-col md:flex-row justify-between rounded-md mt-4'
+      >
         <div className='w-full p-8'>
           <img
-            className='w-full rounded-md '
+            className='w-full rounded-xl '
             src={store.store.images}
             alt={store.store.name}
             style={{ height: '100%', width: '100%', objectFit: 'cover' }}
           />
         </div>
 
-        <div className='w-full p-8  h-32'>
-          {' '}
-          {/* Map */}
+        <div className='w-full p-8 h-128'>
           <MapContainer
             zoom={12}
-            style={{ height: '500%', width: '100%' }}
+            style={{ height: '100%', width: '100%' }}
             center={store.store.location.coordinates}
           >
             <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
@@ -89,28 +94,47 @@ const StoreDetails = () => {
 
       <div className='flex'>
         <div className='fer p-8 flex-1'>
-          <h3 className='text-xl lg:text-2xl font-bold text-cbb26a'>
-            Reviews from Users
+          <h3 className='text-xl lg:text-2xl font-bold text-cbb26a underline'>
+            Reviews
           </h3>
-          <ul className='list-disc'>
-            <ol className='text-cbb26a font-bold'>PlaceHolder!</ol>
-            <ol className='text-cbb26a font-bold'>PlaceHolder!</ol>
-          </ul>
+          {reviews.length > 0 ? (
+            <ul className='list-disc'>
+              {reviews.map((review) => (
+                <li key={review._id} className='font-semibold list-none'>
+                  <div
+                    id='review'
+                    className='flex items-center justify-between bg-slate-200 w-full rounded-full my-4 p-3 text-gray-600'
+                  >
+                    <div className='flex-1'>
+                      <Link to='#' className='hover:underline mr-2'>
+                        {' '}
+                        {review.user.firstName} {review.user.lastName}:
+                      </Link>
+                      <span>{review.comment}</span>
+                    </div>
+                    <div>
+                      <ReactStars
+                        count={5}
+                        size={24}
+                        value={Number(review.individualAverage)}
+                        edit={false}
+                        color2={'#ffd700'}
+                      />
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className='text-cbb26a font-bold'>No Reviews</p>
+          )}
         </div>
-
-        <div className='fer p-8 flex-1'>
-          <div className=' p-8 '>
-            <h3 className='text-xl font-bold text-cbb26a mt-4'>
-              Rating:<span>⭐⭐⭐⭐</span>
-            </h3>
-          </div>
-          <div className='  p-8'>
-            <Link to={`/reviewStore/${storeId}`}>
-              <button className='text-xl font-bold border-2 text-cbb26a mt-4 p-2 border-cbb26a rounded-md hover:bg-cbb26aHover'>
-                Rate this store
-              </button>
-            </Link>
-          </div>
+        <div className='p-8'>
+          <Link to={`/reviewStore/${storeId}`}>
+            <button className='text-xl font-bold border-2 text-cbb26a mt-4 p-2 border-cbb26a rounded-md hover:bg-cbb26aHover'>
+              Rate this store
+            </button>
+          </Link>
         </div>
       </div>
     </div>
