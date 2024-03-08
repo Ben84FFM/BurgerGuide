@@ -93,7 +93,7 @@ const StoreDetails = () => {
         <div className="flex flex-col lg:flex-row items-center justify-center">
           <div className="w-full lg:w-1/2 p-8 lg:ml-4 lg:block">
             <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-cbb26a mb-4 lg:mb-6">
-              Rating: <span className="text-yellow-400">⭐⭐⭐⭐</span>
+        
             </h3>
           </div>
 
