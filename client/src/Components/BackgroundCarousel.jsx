@@ -5,8 +5,8 @@ import 'slick-carousel/slick/slick-theme.css';
 
 const BackgroundCarousel = () => {
   const localImages = [
-    '../src/assets/LandingPage.jpg',
-    '../src/assets/LandingPageLogo2.png',
+    require('../src/assets/LandingPage.jpg').default,
+    require('../src/assets/LandingPageLogo2.png').default,
   ];
   const containerRef = useRef(null);
 
@@ -25,7 +25,7 @@ const BackgroundCarousel = () => {
     dots: true,
     infinite: true,
     speed: 800,
-    slidesToShow: 3,
+    slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
