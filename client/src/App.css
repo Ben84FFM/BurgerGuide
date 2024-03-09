@@ -56,18 +56,18 @@
 }
 
 .LogoBorder::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
   background: linear-gradient(#cbb26a, #dfc472);
   animation: animate 5s linear infinite;
   pointer-events: none;
-  z-index: 2;
+  z-index: -1;
 }
 
 .LogoBorder::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 2px;
   background: #000000;
@@ -80,7 +80,7 @@
   font-style: italic;
   color: #ffffff;
   pointer-events: none;
-  z-index: 2;
+  z-index: -1;
 }
 
 .LogoBorder:hover::before {
@@ -119,7 +119,7 @@
 }
 
 .TechStackBorder::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
@@ -130,7 +130,7 @@
 }
 
 .TechStackBorder::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 2px;
   background: #000000;
