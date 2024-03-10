@@ -12,6 +12,8 @@ import SearchTest from './Components/SearchTest';
 import StoreDetails from './Components/StoreDetail';
 import BurgerRating from './Components/StoreRating';
 import PrivacyPolicy from './Components/dataPolicy';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faInstagram, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 function App() {
   return (
