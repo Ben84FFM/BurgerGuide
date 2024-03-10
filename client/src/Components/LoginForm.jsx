@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthProvider';
+import PolicyBackground from './DynamicBackground';
 import axios from 'axios';
 
 function LoginForm() {
@@ -35,22 +36,12 @@ function LoginForm() {
   };
 
   return (
+    <PolicyBackground>
   <div className='containerBen1 bg-black'>
-<div className=" containerBen2 flex flex-col items-center max-w-screen-xl mx-auto relative"> 
-    <img
-      src="../src/assets/LandingPage.jpg"
-      alt="LandingPageLogo"
-      className="w-full object-fill h-auto max-w-screen-xl"
-    />
 
-    <img
-      src="../src/assets/LandingPageLogo2.jpg"
-      alt="LandingPageLogo2"
-      className="w-full object-fill h-auto max-w-screen-xl"
-    />
-    <div className="containerBen3 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-20 rounded xl shadow-xl shadow-ray-300 flex bg-opacity-70 bg-black rounded-md">
+    <div className="Login absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-20 rounded xl shadow-xl shadow-ray-300 flex bg-opacity-70 bg-black rounded-md">
     <div className='containerLogin mt-20 mx-auto rounded-xl shadow-xl shadow-gray-500'>
-      <div className='rounded bg-black p-4 bg-opacity-70'>
+      <div className='rounded p-4 bg-opacity-70'>
         <h2 className='text-cbb26a text-lg font-bold mb-4'>Login</h2>
         {error && <p className='text-red-500 mb-4'>{error}</p>}
         <form onSubmit={handleSubmit}>
@@ -78,8 +69,9 @@ function LoginForm() {
       </div>
     </div>
     </div>
-    </div> 
+    
     </div>
+    </PolicyBackground>
   );
 }
 

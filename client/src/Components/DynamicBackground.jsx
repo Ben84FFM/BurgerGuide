@@ -7,8 +7,8 @@ const PolicyBackground = ({ children }) => {
     'https://media.gq-magazin.de/photos/5fca217030a450011a3a481e/master/w_1600%2Cc_limit/hamburguesa.jpg',
     'https://www.ka-news.de/storage/image/7/1/6/8/2228617_burger_ka-2022-644x395_1A8_aF_mHb0IT.jpg',
     'https://pec-blog-assets.s3.eu-central-1.amazonaws.com/wp-content/uploads/BestBurgerHH_PulledPorkBurger.jpg',
-    'https://lh3.googleusercontent.com/p/AF1QipOyftwkDpG_AdLtdiINO7Ksk-j0FOuy2PxTDW5V=s1360-w1360-h1020',
-    'https://recipes.net/wp-content/uploads/2021/10/the-best-grilled-bbq-burger-recipe.jpg',
+    'https://t3.ftcdn.net/jpg/06/72/74/80/360_F_672748092_KGiVda9I51NwW8TwVpG3XT6TIK2cGzK4.jpg',
+    'https://t4.ftcdn.net/jpg/06/04/41/07/360_F_604410795_9g8I3UlwzDyKLt19roKzpCV8X1Zc5YVm.jpg',
   ];
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const PolicyBackground = ({ children }) => {
   }, [backgroundImage]);
 
   return (
-    <div className="bg-white min-h-screen flex items-center justify-center" style={{ backgroundImage: `url(${backgrounds[backgroundImage]})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <div className="bg-white min-h-screen container flex" style={{ backgroundImage: `url(${backgrounds[backgroundImage]})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       {children}
     </div>
   );
