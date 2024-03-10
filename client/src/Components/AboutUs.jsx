@@ -1,12 +1,13 @@
 import React from 'react';
 import TechStCarouselButton from './AboutusMockup';
+import PolicyBackground from './DynamicBackground';
+
 
 const AboutUs = () => {
   return (
-        <div className="MainContainer bg-cover" style={{ backgroundImage: `url('../src/assets/LandingPageLogo2.jpg')` }}>
-
-      <div className="pt-8 pb-8">
-      <div className='ContainerBildText flex flex-row relative space-x-8'>
+    <PolicyBackground>
+        <div className="pt-8 pb-8">
+      <div className='Container flex flex-row relative space-x-8'>
         <div className="LogoImage ">
           <img
             src="../src/assets/BurgerGuideLogo2.png"
@@ -40,8 +41,8 @@ const AboutUs = () => {
 </div>
 </div>
 </div>
-   
-    </div>
+ 
+  </PolicyBackground>
   );
 };
 

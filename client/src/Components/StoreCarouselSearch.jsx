@@ -33,7 +33,7 @@ const StoreCarouselSearch = () => {
     infinite: true,
     speed: 800,
     slidesToShow: 5, 
-    slidesToScroll: 5,
+    slidesToScroll: 4,
     autoplay: true,
     autoplaySpeed: 5000,
     vertical: true, 
@@ -65,12 +65,12 @@ const StoreCarouselSearch = () => {
   }
 
   return (
-    <div className="text-center px-4 lg:px-0 carousel-container"> 
+    <div className="container text-center px-4 lg:px-0"> 
       <h2 className="text-2xl lg:text-3xl xl:text-4xl text-cbb26a font-bold mb-6">Burger & BBQ Stores</h2>
       <Slider {...settings} className="mx-auto max-w-screen-lg">
         {stores.map((store) => (
-          <div key={store._id} className="flex items-center px-2 lg:px-4">
-            <div className="flex bg-white rounded-md p-4 lg:p-6 shadow-md" ref={containerRef}>
+          <div key={store._id} className="flex items-center px-2 lg:px-4 text-left ">
+            <div className="flex bg-black opacity-75 rounded-md p-4 lg:p-6 shadow-md mb-2" ref={containerRef}>
               <Link to={`/store/${store._id}`} className="w-32 h-32">
                 <img
                   src={store.images}
@@ -82,14 +82,14 @@ const StoreCarouselSearch = () => {
                 <h3 className="text-lg lg:text-xl xl:text-2xl text-cbb26a font-bold mb-2 overflow-hidden overflow-ellipsis max-w-xs break-all">
                   {store.name}
                 </h3>
-                <p className="text-gray-600 mb-2 text-sm">{store.phonenumbers}</p>
+                <p className="text-cbb26a mb-2 text-sm">+49 {store.phonenumbers}</p>
                 <a
                   href={store.website}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-500 text-sm"
+                  className="text-cbb26a font-bold text-sm"
                 >
-                  Visit Store
+                  To the Store
                 </a>
               </div>
             </div>

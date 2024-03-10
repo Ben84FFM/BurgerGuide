@@ -54,7 +54,7 @@ const SearchRestaurant = () => {
 
   return (
 <PolicyBackground>
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="min-h-screen flex items-center justify-center pt-8 pb-8">
       <div className="lg:flex lg:items-center max-w-screen-xl mx-auto">
         <div className="lg:w-1/2 order-2 lg:order-1 lg:mr-4">
           <StoreCarouselSearch />

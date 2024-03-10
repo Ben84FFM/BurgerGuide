@@ -8,10 +8,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-black text-cbb26a py-8">
-      <div className="container mx-auto flex flex-wrap justify-center lg:justify-between">
+    <footer className="container flex bg-black text-cbb26a py-8">
+      <div className="container mx-auto flex flex-wrap justify-center lg:justify-between ml-4">
         <div className="footer-section mb-4 lg:mb-0 w-full lg:w-1/4">
-          <h4 className="text-cbb26a text-lg font-bold mb-2">Imprint</h4>
+        <Link to='/impress' className='cursor-pointer hover:opacity-80 text-cbb26a font-bold mb-2 block lg:inline-block lg:mb-0 lg:mr-4'><p className='text-lg'>Imprint</p></Link>
         </div>
 
         <div className="footer-section mt-4 lg:mt-0 w-full lg:w-1/2">
