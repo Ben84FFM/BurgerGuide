@@ -4,7 +4,7 @@ import PolicyBackground from './DynamicBackground';
 const Impress = () => {
   return (
     <PolicyBackground>
-    <div className="max-w-2xl mx-auto px-8 pt-8 pb-8 bg-white rounded-md mt-10 sm:mt-20 opacity-80">
+    <div className="container max-w-2xl mx-auto bg-white shadow-lg rounded-md mt-10 sm:mt-20 p-4 sm:p-8 opacity-80px-8">
   <h1 className="text-3xl font-bold mb-6">Impressum für Burger Guide</h1>
 
   <p className="mb-4"><strong>Stand:</strong> [Datum der letzten Aktualisierung]</p>
