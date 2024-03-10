@@ -1,5 +1,5 @@
 import React from 'react';
-import StackCarousel from './StackCarousel';
+import TechStCarouselButton from './AboutusMockup';
 
 const AboutUs = () => {
   return (
@@ -36,16 +36,11 @@ const AboutUs = () => {
 
     <p className='text-cbb26a font-bold text-center'>Join us at BurgerGuide, where burger dreams come true!</p>
   </div>
+  <TechStCarouselButton/>
 </div>
 </div>
 </div>
-
-      {/* Carousel */}
-      <div className="lg:w-full mt-8 lg:mt-0 flex flex-col">
-        <div className="mx-auto lg:w-1/2">
-          <StackCarousel/>
-        </div>
-      </div>
+   
     </div>
   );
 };
