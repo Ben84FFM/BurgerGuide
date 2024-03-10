@@ -2,7 +2,7 @@ import StoreCarousel from "./StoreCarousel";
 
 const HeroSection = () => {
   return (
-    <div className="containerBG bg-cover" style={{ backgroundImage: `url('../src/assets/LandingPageLogo2.jpg')` }}>
+    <div className="container flex  bg-cover" style={{ backgroundImage: `url('../src/assets/LandingPageLogo2.jpg')` }}>
       <div className="containerImg flex flex-col items-center max-w-screen-xl mx-auto relative pt-8 pb-8"> 
         <StoreCarousel />
         <div className="containerLogoTextBox bg-opacity-80 flex flex-col items-center bg-black rounded-xl">

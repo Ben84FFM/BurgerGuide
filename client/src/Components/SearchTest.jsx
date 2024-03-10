@@ -3,7 +3,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import StoreCarouselSearch from './StoreCarouselSearch';
 import PolicyBackground from './DynamicBackground';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const SearchRestaurant = () => {
   const [search, setSearch] = useState('');
@@ -69,12 +70,13 @@ const SearchRestaurant = () => {
                 placeholder="Search..."
                 className="flex-grow px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-cbb26a mb-2 lg:mb-0 lg:mr-2"
               />
-              <button
-                type="submit"
-                className="bg-black text-cbb26a px-4 py-2 rounded-md hover:bg-opacity-80 focus:outline-none shadow-md border border-gray-500"
-              >
-                Search
-              </button>
+<button
+  type="submit"
+  className="bg-black text-cbb26a px-4 py-2 rounded-md hover:bg-opacity-80 focus:outline-none shadow-md border border-gray-500"
+>
+  <FontAwesomeIcon icon={faSearch} className="mr-2" />
+  Search
+</button>
             </form>
             {loading && <p>Loading...</p>}
             {error && <p>Error loading results.</p>}

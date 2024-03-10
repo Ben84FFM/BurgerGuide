@@ -65,12 +65,14 @@ const StoreCarouselSearch = () => {
   }
 
   return (
-    <div className="container text-center px-4 lg:px-0"> 
-      <h2 className="text-2xl lg:text-3xl xl:text-4xl text-cbb26a font-bold mb-6">Burger & BBQ Stores</h2>
+    <div className="container text-center px-4 lg:px-0">
+      <h2 className="text-2xl lg:text-3xl xl:text-4xl text-cbb26a font-bold mb-6">
+        Burger & BBQ Stores
+      </h2>
       <Slider {...settings} className="mx-auto max-w-screen-lg">
         {stores.map((store) => (
           <div key={store._id} className="flex items-center px-2 lg:px-4 text-left ">
-            <div className="flex bg-black opacity-75 rounded-md p-4 lg:p-6 shadow-md mb-2" ref={containerRef}>
+            <div className="flex bg-black rounded-md p-4 lg:p-6 shadow-md mb-2 bg-opacity-75" ref={containerRef}>
               <Link to={`/store/${store._id}`} className="w-32 h-32">
                 <img
                   src={store.images}
