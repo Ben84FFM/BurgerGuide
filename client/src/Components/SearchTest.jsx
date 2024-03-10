@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import StoreCarouselSearch from './StoreCarouselSearch';
-import DynamicBackground from './DynamicBackground';
+import PolicyBackground from './DynamicBackground';
+
 
 const SearchRestaurant = () => {
   const [search, setSearch] = useState('');
@@ -49,10 +50,10 @@ const SearchRestaurant = () => {
     e.preventDefault();
   };
 
-<DynamicBackground></DynamicBackground>
+
 
   return (
-
+<PolicyBackground>
     <div className="min-h-screen flex items-center justify-center">
       <div className="lg:flex lg:items-center max-w-screen-xl mx-auto">
         <div className="lg:w-1/2 order-2 lg:order-1 lg:mr-4">
@@ -112,7 +113,7 @@ const SearchRestaurant = () => {
         </div>
       </div>
     </div>
-
+ </PolicyBackground>
   );
 };
 

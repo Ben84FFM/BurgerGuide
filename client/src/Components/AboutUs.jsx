@@ -5,7 +5,7 @@ const AboutUs = () => {
   return (
         <div className="MainContainer bg-cover" style={{ backgroundImage: `url('../src/assets/LandingPageLogo2.jpg')` }}>
 
-      <div className="ShadowContainer">
+      <div className="pt-8 pb-8">
       <div className='ContainerBildText flex flex-row relative space-x-8'>
         <div className="LogoImage ">
           <img
@@ -34,7 +34,7 @@ const AboutUs = () => {
     <p className="text-cbb26a font-bold">Tailwind & CSS</p>
     <p className="text-cbb26a mb-4">Responsible for Design and UserExperience and Responsive Web Design</p>
 
-    <p className='text-cbb26a font-bold text-center'>Join us at BurgerGuide, where burger dreams come true!</p>
+    <p className='text-cbb26a font-bold text-center'>Join us at BurgerGuide, where Burger dreams come true!</p>
   </div>
   <TechStCarouselButton/>
 </div>
