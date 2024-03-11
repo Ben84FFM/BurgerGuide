@@ -21,7 +21,7 @@ function Navbar() {
   };
 
   return (
-    <div className='container flex h-24 bg-gradient-to-r from-black via-gray-800 to-gray-900  p-4 text-base  text-cbb26a relative z-50'>
+    <div className='container flex h-24 bg-gradient-to-r from-black via-gray-800 to-gray-900  p-4 text-base  text-cbb26a relative z-10 NavbarBorder'>
 
       <div className='flex-1 flex flex-row' >
         <div className="flex flex-col items-center md:flex-row">
