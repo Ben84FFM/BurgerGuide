@@ -24,12 +24,18 @@ const PolicyBackground = ({ children }) => {
     console.log('Current background image URL:', backgrounds[backgroundImage]);
   }, [backgroundImage]);
 
+  const backgroundStyle = {
+    backgroundImage: `url(${backgrounds[backgroundImage]})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    transition: 'background-image 1s ease-in-out', // Hinzugefügte CSS-Transition-Eigenschaft
+  };
+
   return (
-    <div className="bg-white min-h-screen container flex" style={{ backgroundImage: `url(${backgrounds[backgroundImage]})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <div className="bg-white min-h-screen container flex" style={backgroundStyle}>
       {children}
     </div>
   );
 };
 
 export default PolicyBackground;
-
