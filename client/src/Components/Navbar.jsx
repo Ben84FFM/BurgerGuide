@@ -20,27 +20,25 @@ function Navbar() {
   };
 
   return (
-    <div className='Navbar flex flex-col md:flex-row justify-between items-center bg-black p-4 font-bold'>
-      <div className="flex items-center space-x-4">
-        <Link to='/' className='cursor-pointer hover:opacity-80 text-lg font-bold text-cbb26a'><h1 className='text-lg'>Home</h1></Link>
-        <Link to='/burgerstores' className='cursor-pointer hover:opacity-80 text-lg font-bold text-cbb26a'><h1 className='text-lg'>Stores</h1></Link>
+    <div className='flex  bg-gradient-to-r from-black via-gray-800 to-gray-900  p-4 text-base  text-cbb26a'>
+      <div className="flex-1 flex items-center"><Link to='/' className='cursor-pointer hover:opacity-80  pl-4'>Home</Link></div>
+
+      <div className=" bg-center flex items-center " ><h1 className='text-6xl font-serif ' style={{ transform: 'scalex(0.7)' }} >BurgerGuide</h1></div>
+
+
+      <div className="flex-1 flex justify-end items-center">
+        <Link to='/about' className='cursor-pointer hover:opacity-80 sm:p-4 md:pr-12'>ABOUT US</Link>
+        {isLoggedIn ? (
+          <div className='flex flex-col  md:flex-row pr-8 '>
+            <p className='pr-8'>Welcome {userData.firstName}</p>
+            <button className='cursor-pointer hover:opacity-80' onClick={handleLogout}>LOGOUT</button>
+          </div>
+        ) : (
+          <Link to='/login' className='cursor-pointer hover:opacity-80 '>LOGING</Link>
+        )}
       </div>
-      <div className="flex items-center flex-grow space-x-4 flex-1">
-        <div className="flex items-center flex-grow">
-          <img src="../src/assets/BurgerGuideLogo2.png" alt="Logo" className="h-8 w-8 mx-auto" />
-        </div>
-        <Link to='/about' className='cursor-pointer hover:opacity-80 text-lg font-bold text-cbb26a flex-1'>About</Link>
-        <div className="flex justify-end items-center space-x-4 flex-1">
-          {isLoggedIn ? (
-            <>
-              <p className='text-base font-bold text-cbb26a'>Welcome {userData.firstName}</p>
-              <button className='cursor-pointer hover:opacity-80 text-base font-bold text-cbb26a' onClick={handleLogout}>LOGOUT</button>
-            </>
-          ) : (
-            <Link to='/login' className='cursor-pointer hover:opacity-80 text-base font-bold text-cbb26a flex-1'>LOGIN</Link>
-          )}
-        </div>
-      </div>
+
+
     </div>
   );
 }
