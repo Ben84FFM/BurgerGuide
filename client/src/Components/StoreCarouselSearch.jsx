@@ -1,7 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import Slider from 'react-slick';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
+import ShareButtons from './ShareFunction';
+
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -93,6 +95,8 @@ const StoreCarouselSearch = () => {
                 >
                   To the Store
                 </a>
+                <p className="text-cbb26a mb-2 text-sm font-bold "> Share </p>
+                <ShareButtons url={`https://deineapp.com/store/${store._id}`} title={store.name} />
               </div>
             </div>
           </div>
