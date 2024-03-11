@@ -85,8 +85,8 @@ const BurgerRating = () => {
 
   return (
     <PolicyBackground>
-<div className='pt-8 pb-8'>
-  <p className='text-cbb26a container mx-auto p-4 lg:w-2/3 xl:w-1/2 bg-black opacity-80 rounded-md pt-8 pb-8'>
+<div className='container flex pt-8 pb-8'>
+  <p className='container text-cbb26a  mx-auto p-4 lg:w-2/3 xl:w-1/2 bg-black opacity-80 rounded-md pt-8 pb-8'>
     <p className='font-bold'>Dear Users,</p> <br />
     <p>
       We would like to emphasize the importance of providing a fair review
@@ -109,7 +109,7 @@ const BurgerRating = () => {
   </p>
 </div>
 
-    <div className='container mx-auto p-4 lg:w-2/3 xl:w-1/2 bg-black rounded-md pt-8 pb-8'>
+    <div className='mx-auto p-4 lg:w-2/3 xl:w-1/2 bg-black rounded-md'>
       <h2 className='text-2xl font-bold text-cbb26a mb-4'>
         Burger Rating for {store.name}
       </h2>

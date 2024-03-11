@@ -63,38 +63,38 @@ const StoreCarousel = () => {
   }
 
   return (
-    <div className="text-center px-4 lg:px-0">
-      <h2 className="text-2xl lg:text-3xl xl:text-4xl text-cbb26a font-bold mb-6">Burger & BBQ Stores</h2>
-      <Slider {...settings} className="mx-auto max-w-screen-lg">
-        {stores.map((store) => (
-          <div key={store._id} className="flex items-center px-2 lg:px-4">
-            <div className="flex bg-white rounded-md p-4 lg:p-6 shadow-md">
-              <Link to={`/store/${store._id}`} className="w-32 h-32">
-                <img
-                  src={store.images}
-                  alt={store.name}
-                  className="w-full h-full object-cover rounded-md shadow-lg"
-                />
-              </Link>
-              <div className="ml-4 flex-grow">
-                <h3 className="text-lg lg:text-xl xl:text-2xl text-cbb26a font-bold mb-2 overflow-hidden overflow-ellipsis max-w-xs break-all">
-                  {store.name}
-                </h3>
-                <p className="text-gray-600 mb-2 text-sm">{store.phonenumbers}</p>
-                <a
-                  href={store.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 text-sm"
-                >
-                  Visit Store
-                </a>
-              </div>
-            </div>
+<div className="text-center px-4 lg:px-0">
+  <h2 className="text-2xl lg:text-3xl xl:text-4xl text-cbb26a font-bold mb-6">Burger & BBQ Stores</h2>
+  <Slider {...settings} className="mx-auto max-w-screen-lg">
+    {stores.map((store) => (
+      <div key={store._id} className="flex items-center px-2 lg:px-4">
+        <div className="flex rounded-md overflow-hidden bg-gradient-to-r from-white via-gray-400 to-gray-600 p-4 lg:p-6 shadow-md">
+          <Link to={`/store/${store._id}`} className="w-32 h-32">
+            <img
+              src={store.images}
+              alt={store.name}
+              className="w-full h-full object-cover rounded-md shadow-lg"
+            />
+          </Link>
+          <div className="ml-4 flex-grow">
+            <h3 className="text-lg lg:text-xl xl:text-2xl text-cbb26a font-bold mb-2 overflow-hidden overflow-ellipsis max-w-xs break-all">
+              {store.name}
+            </h3>
+            <p className="text-gray-600 mb-2 text-sm">{store.phonenumbers}</p>
+            <a
+              href={store.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 text-sm"
+            >
+              Visit Store
+            </a>
           </div>
-        ))}
-      </Slider>
-    </div>
+        </div>
+      </div>
+    ))}
+  </Slider>
+</div>
   );
 };
 
