@@ -56,7 +56,7 @@
 }
 
 .LogoBorder::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   height: 100%;
@@ -67,7 +67,7 @@
 }
 
 .LogoBorder::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 2px;
   background: #000000;
@@ -115,6 +115,14 @@
   border: 2px solid #cbb26a;
 }
 
+.footerBorder {
+  border-top: 4px solid #cbb26a;
+}
+
+.NavbarBorder {
+  border-bottom: 4px solid #cbb26a;
+}
+
 /* TechStackBorder About us Page */
 
 .TechStackBorder {
@@ -124,7 +132,7 @@
 }
 
 .TechStackBorder::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   height: 100%;
@@ -135,7 +143,7 @@
 }
 
 .TechStackBorder::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 2px;
   background: #000000;
