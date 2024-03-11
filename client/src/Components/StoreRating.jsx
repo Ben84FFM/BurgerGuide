@@ -108,7 +108,7 @@ const BurgerRating = () => {
     <p className='font-bold'>Your BurgerGuideTeam!</p>
   </p>
 </div>
-8
+
     <div className='container mx-auto p-4 lg:w-2/3 xl:w-1/2 bg-black rounded-md pt-8 pb-8'>
       <h2 className='text-2xl font-bold text-cbb26a mb-4'>
         Burger Rating for {store.name}

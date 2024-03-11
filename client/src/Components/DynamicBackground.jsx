@@ -28,7 +28,7 @@ const PolicyBackground = ({ children }) => {
     backgroundImage: `url(${backgrounds[backgroundImage]})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    transition: 'background-image 1s ease-in-out', // Hinzugefügte CSS-Transition-Eigenschaft
+    transition: 'background-image 1s ease-in-out',
   };
 
   return (
