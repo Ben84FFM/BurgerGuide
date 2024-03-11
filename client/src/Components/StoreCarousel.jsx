@@ -63,7 +63,8 @@ const StoreCarousel = () => {
   }
 
   return (
-<div className="text-center px-4 lg:px-0">
+    
+<div className="container text-center px-4 lg:px-0">
   <h2 className="text-2xl lg:text-3xl xl:text-4xl text-cbb26a font-bold mb-6">Burger & BBQ Stores</h2>
   <Slider {...settings} className="mx-auto max-w-screen-lg">
     {stores.map((store) => (
