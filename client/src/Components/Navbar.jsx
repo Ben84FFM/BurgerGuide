@@ -20,6 +20,10 @@ function Navbar() {
   };
 
   return (
+
+    <div className='container flex bg-gradient-to-r from-black via-gray-800 to-gray-900  p-4 text-base  text-cbb26a'>
+      <div className="flex-1 flex items-center"><Link to='/' className='cursor-pointer hover:opacity-80  pl-4'>Home</Link></div>
+
     <div className='container flex  bg-gradient-to-r from-black via-gray-800 to-gray-900  p-4 text-base  text-cbb26a'>
 
       <div className="flex-1 flex flex-col  md:flex-row items-center">
@@ -27,7 +31,7 @@ function Navbar() {
         <Link to='/burgerstores' className='cursor-pointer hover:opacity-80 sm:p-4 md:pr-12'>Stores</Link>
       </div>
 
-      <div className=" bg-center flex items-center " ><h1 className='text-6xl font-serif ' style={{ transform: 'scalex(0.7)' }} >BurgerGuide</h1></div>
+    <div className=" bg-center flex items-center " ><h1 className='text-6xl font-serif ' style={{ transform: 'scalex(0.7)' }} >BurgerGuide</h1></div>
 
 
       <div className="flex-1 flex justify-end items-center">
