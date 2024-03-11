@@ -32,21 +32,20 @@ const StackCarousel = () => {
 
   return (
     <div className="text-center px-4 lg:px-0 py-8">
-      <div className="max-w-screen-xl mx-auto">
-        <Slider {...settings} className="mx-auto">
-          {placeholderImages.map((image, index) => (
-            <div key={index} className="flex items-center px-4">
-              <div className="flex bg-white rounded-md p-6">
-                <img
-                  src={image}
-                  alt={`Technology ${index + 1}`}
-                  className="object-cover rounded-md mx-auto"
-                  style={{ width: '100px', height: '100px' }}
-                />
-              </div>
+    <div className="max-w-screen-xl mx-auto">
+      <Slider {...settings} className="mx-auto">
+        {placeholderImages.map((image, index) => (
+          <div key={index} className="flex items-center px-4">
+            <div className="flex bg-white rounded-md p-6 w-32 h-32">
+              <img
+                src={image}
+                alt={`Technology ${index + 1}`}
+                className="object-cover rounded-md mx-auto w-full h-full"
+              />
             </div>
-          ))}
-        </Slider>
+          </div>
+        ))}
+      </Slider>
       </div>
     </div>
   );

@@ -1,8 +1,14 @@
 import React from 'react';
+import PolicyBackground from './DynamicBackground';
+
+
+  
+
 
 const PrivacyPolicy = () => {
   return (
-    <div className="max-w-2xl mx-auto p-8 bg-white shadow-lg rounded-md mt-10 sm:mt-20">
+    <PolicyBackground>
+    <div className="container max-w-2xl mx-auto bg-white shadow-lg rounded-md mt-10 sm:mt-20 p-4 sm:p-8 opacity-80px-8">
       <h1 className="text-3xl font-bold mb-6">Datenschutzrichtlinie für Burger Guide</h1>
 
       <p className="mb-4"><strong>Stand:</strong> [Datum der letzten Aktualisierung]</p>
@@ -52,6 +58,7 @@ const PrivacyPolicy = () => {
         <p>Der Burger Guide kann diese Datenschutzrichtlinie von Zeit zu Zeit aktualisieren. Die neueste Version wird auf der Website veröffentlicht, und die Fortsetzung der Nutzung der Anwendung nach Änderungen gilt als Zustimmung zu den aktualisierten Bedingungen.</p>
       </div>
     </div>
+    </PolicyBackground>
   );
 };
 

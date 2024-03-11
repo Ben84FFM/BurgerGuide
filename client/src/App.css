@@ -63,7 +63,7 @@
   background: linear-gradient(#cbb26a, #dfc472);
   animation: animate 5s linear infinite;
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
 }
 
 .LogoBorder::after {
@@ -80,7 +80,7 @@
   font-style: italic;
   color: #ffffff;
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
 }
 
 .LogoBorder:hover::before {
@@ -99,7 +99,7 @@
 
 .LogoImage {
   position: relative;
-  z-index: 1;
+  z-index: 0;
 }
 
 .LogoImage:hover .LogoBorder::before {
@@ -171,5 +171,5 @@
 
 #review,
 img {
-  border: 5px solid #cbb26a;
+  border: 2px solid #cbb26a;
 }

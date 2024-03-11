@@ -12,6 +12,7 @@ import SearchTest from './Components/SearchTest';
 import StoreDetails from './Components/StoreDetail';
 import BurgerRating from './Components/StoreRating';
 import PrivacyPolicy from './Components/dataPolicy';
+import Impress from './Components/Impress';
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
         <Route path='/addRestaurant' element={<AddStoreForm />} />
         <Route path="/reviewStore/:storeId" element={<BurgerRating />} />
         <Route path="/policy" element={<PrivacyPolicy />} />
+        <Route path="/impress" element={<Impress />} />
+
       </Routes>
       <Footer />
     </>

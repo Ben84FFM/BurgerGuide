@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import PolicyBackground from './DynamicBackground';
 
 function RegisterForm() {
   const [firstName, setFirstName] = useState('');
@@ -42,23 +43,8 @@ function RegisterForm() {
 
 
     return (
+      <PolicyBackground> 
       <div className="containerBG bg-black ">
-        <div className="containerImg flex flex-col items-center max-w-screen-xl mx-auto relative "> 
-          {/* ImageTop */}
-          <img
-            src="../src/assets/LandingPage.jpg"
-            alt="LandingPageLogo"
-            className="w-full object-fill h-auto max-w-screen-xl"
-          />
-    
-          {/* ImageBottom */}
-          <img
-            src="../src/assets/LandingPageLogo2.jpg"
-            alt="LandingPageLogo2"
-            className="w-full object-fill h-auto max-w-screen-xl"
-          />
-    
-          {/* Container mit dem Text und dem Bild */}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center bg-black border-slate-50 rounded-xl shadow-xl shadow-gray-500">  
             <div className="text-center bg-opacity-70">
             <div className='bg-black container mx-auto max-w-md rounded-xl shadow-xl shadow-gray-500'>
@@ -115,12 +101,10 @@ function RegisterForm() {
         <p className='mt-4'><Link to='/login' className=' text-cbb26a underline'>  Login here   </Link>  </p>
       </div>
     </div>
-    
             </div>
           </div>
-        </div>
       </div>
+      </PolicyBackground>
     );
     }
-  
   export default RegisterForm;

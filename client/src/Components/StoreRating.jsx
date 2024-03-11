@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import PolicyBackground from './DynamicBackground';
 
 const BurgerRating = () => {
   const { storeId } = useParams();
@@ -83,7 +84,32 @@ const BurgerRating = () => {
   }
 
   return (
-    <div className='max-w-screen-md mx-auto mt-8 p-4 bg-black rounded-md shadow'>
+    <PolicyBackground>
+<div className='pt-8 pb-8'>
+  <p className='text-cbb26a container mx-auto p-4 lg:w-2/3 xl:w-1/2 bg-black opacity-80 rounded-md pt-8 pb-8'>
+    <p className='font-bold'>Dear Users,</p> <br />
+    <p>
+      We would like to emphasize the importance of providing a fair review
+      for our BurgerStore. Our community and future customers rely on your
+      honest opinions to make informed decisions about their visit.
+    </p> <br />
+    <p>
+      Fair reviews not only assist others in selecting the right BurgerStore
+      but also help us continuously improve our service and products. Your
+      feedback is invaluable and enables us to respond to your needs, creating
+      a better shopping experience.
+    </p>
+    <p> <br />
+      Please take a moment to share your experiences fairly and objectively.
+      Include both positive and constructive criticism. Your contribution
+      helps build an open and transparent community.
+    </p> <br />
+    <p className='font-bold'>Thank you for your support!</p><br />
+    <p className='font-bold'>Your BurgerGuideTeam!</p>
+  </p>
+</div>
+
+    <div className='container mx-auto p-4 lg:w-2/3 xl:w-1/2 bg-black rounded-md pt-8 pb-8'>
       <h2 className='text-2xl font-bold text-cbb26a mb-4'>
         Burger Rating for {store.name}
       </h2>
@@ -133,6 +159,7 @@ const BurgerRating = () => {
         <p className='text-cbb26a mt-2'>Thank you for your rating!</p>
       )}
     </div>
+    </PolicyBackground>
   );
 };
 
