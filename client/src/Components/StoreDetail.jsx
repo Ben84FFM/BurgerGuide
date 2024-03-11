@@ -67,7 +67,6 @@ const StoreDetails = () => {
             <p className='text-cbb26a mb-4'>{store.store.phoneNumber}</p>
           </div>
         </div>
-
   
         <div
           id='burger-map'
@@ -94,56 +93,6 @@ const StoreDetails = () => {
               <Marker position={store.store.location.coordinates}></Marker>
             </MapContainer>
           </div>
-
-        <div className='w-full p-8 h-128'>
-          <MapContainer
-            zoom={12}
-            style={{ height: '100%', width: '100%', borderRadius: '15px', border: '2px solid #cbb26a', }}
-            center={store.store.location.coordinates}
-          >
-            <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
-            <Marker position={store.store.location.coordinates}></Marker>
-          </MapContainer>
-        </div>
-      </div>
-
-      <div className='flex'>
-        <div className='fer p-8 flex-1'>
-          <h3 className='text-xl lg:text-2xl font-bold text-cbb26a underline'>
-            Reviews
-          </h3>
-          {reviews.length > 0 ? (
-            <ul className='list-disc'>
-              {reviews.map((review) => (
-                <li key={review._id} className='font-semibold list-none'>
-                  <div
-                    id='review'
-                    className='flex items-center justify-between bg-slate-200 w-full rounded-full my-4 p-3 text-gray-600'
-                  >
-                    <div className='flex-1'>
-                      <Link to='#' className='hover:underline mr-2'>
-                        {' '}
-                        {review.user.firstName} {review.user.lastName}:
-                      </Link>
-                      <span>{review.comment}</span>
-                    </div>
-                    <div>
-                      <ReactStars
-                        count={5}
-                        size={24}
-                        value={Number(review.individualAverage)}
-                        edit={false}
-                        color2={'#ffd700'}
-                      />
-                    </div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p className='text-cbb26a font-bold'>No Reviews</p>
-          )}
-
         </div>
   
         <div
