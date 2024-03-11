@@ -20,7 +20,7 @@ function Navbar() {
   };
 
   return (
-    <div className='flex  bg-gradient-to-r from-black via-gray-800 to-gray-900  p-4 text-base  text-cbb26a'>
+    <div className='container flex bg-gradient-to-r from-black via-gray-800 to-gray-900  p-4 text-base  text-cbb26a'>
       <div className="flex-1 flex items-center"><Link to='/' className='cursor-pointer hover:opacity-80  pl-4'>Home</Link></div>
 
       <div className=" bg-center flex items-center " ><h1 className='text-6xl font-serif ' style={{ transform: 'scalex(0.7)' }} >BurgerGuide</h1></div>

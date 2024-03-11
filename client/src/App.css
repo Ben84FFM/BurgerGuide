@@ -162,14 +162,16 @@
     transform: rotate(360deg);
   }
 }
-/* 
-#review,
-#burger-store,
-#burger-map {
-  border: 5px solid #cbb26a;
-} */
+/* Für Webkit-basierte Browser (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 12px;
+}
 
-#review,
-img {
-  border: 2px solid #cbb26a;
+::-webkit-scrollbar-thumb {
+  background-color: #cbb26a;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #2d2d2d;
 }
