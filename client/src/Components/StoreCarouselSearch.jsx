@@ -34,8 +34,8 @@ const StoreCarouselSearch = () => {
     dots: true,
     infinite: true,
     speed: 800,
-    slidesToShow: 5, 
-    slidesToScroll: 4,
+    slidesToShow: 4, 
+    slidesToScroll: 3,
     autoplay: true,
     autoplaySpeed: 5000,
     vertical: true, 
@@ -75,7 +75,7 @@ const StoreCarouselSearch = () => {
         {stores.map((store) => (
           <div key={store._id} className="flex items-center px-2 lg:px-4 text-left ">
             <div className="flex bg-black rounded-md p-4 lg:p-6 shadow-md mb-2 bg-opacity-75" ref={containerRef}>
-              <Link to={`/store/${store._id}`} className="w-32 h-32">
+              <Link to={`/store/${store._id}`} className="w-32 h-32 imageBorderLogo rounded-md shadow-md shadow-gray-500 ">
                 <img
                   src={store.images}
                   alt={store.name}

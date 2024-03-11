@@ -43,68 +43,75 @@ function RegisterForm() {
 
 
     return (
-      <PolicyBackground> 
-      <div className="containerBG bg-black ">
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center bg-black border-slate-50 rounded-xl shadow-xl shadow-gray-500">  
-            <div className="text-center bg-opacity-70">
-            <div className='bg-black container mx-auto max-w-md rounded-xl shadow-xl shadow-gray-500'>
-      <div className='p-4'>
-        <h2 className='text-cbb26a text-xl font-bold mb-4'>Register</h2>
+<PolicyBackground className="bg-black bg-opacity-70 min-h-screen flex justify-center items-center">
+  <div className="container flex flex-col items-center border-slate-50 rounded-xl shadow-xl shadow-gray-500 py-8">
+    <div className="text-center bg-opacity-70">
+      <div className="bg-black mx-auto max-w-lg rounded-xl shadow-xl shadow-gray-500 p-8">
+        <h2 className="text-cbb26a text-xl font-bold mb-4">Registration</h2>
         <form onSubmit={handleSubmit}>
-          <div className='mb-4'>
-            <p className='text-cbb26a block mb-2'>First Name:</p>
-            <input className='border rounded w-full p-2'
-              type='text'
+          <div className="mb-4">
+            <p className="text-cbb26a block mb-2">First Name:</p>
+            <input
+              className="border rounded w-full p-2"
+              type="text"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               required
             />
           </div>
-          <div className='mb-4'>
-            <p className='text-cbb26a block mb-2'>Last Name:</p>
-            <input className='border rounded w-full p-2'
-              type='text'
+          <div className="mb-4">
+            <p className="text-cbb26a block mb-2">Last Name:</p>
+            <input
+              className="border rounded w-full p-2"
+              type="text"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
               required
             />
           </div>
-          <div className='mb-4'>
-            <p className='text-cbb26a block mb-2'>Username:</p>
-            <input className='border rounded w-full p-2'
-              type='text'
+          <div className="mb-4">
+            <p className="text-cbb26a block mb-2">Username:</p>
+            <input
+              className="border rounded w-full p-2"
+              type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
             />
           </div>
-          <div className='mb-4'>
-            <p className='text-cbb26a block mb-2'>Email:</p>
-            <input className='border rounded w-full p-2'
-              type='text'
+          <div className="mb-4">
+            <p className="text-cbb26a block mb-2">Email:</p>
+            <input
+              className="border rounded w-full p-2"
+              type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
-          <div className='mb-4'>
-            <p className='text-cbb26a block mb-2'>Password</p>
-            <input className='border rounded w-full p-2'
-              type='password'
+          <div className="mb-4">
+            <p className="text-cbb26a block mb-2">Password</p>
+            <input
+              className="border rounded w-full p-2"
+              type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
-          <button className=' text-cbb26a font-bold mb-4 rounded p-2 mt-2' type='submit'>  Register   </button>
+          <button className="text-cbb26a font-bold mb-4 rounded p-2 mt-4" type="submit">
+            Register
+          </button>
         </form>
-        <p className='mt-4'><Link to='/login' className=' text-cbb26a underline'>  Login here   </Link>  </p>
+        <p className="mt-4">
+          <Link to="/login" className="text-cbb26a underline">
+            Login here
+          </Link>
+        </p>
       </div>
     </div>
-            </div>
-          </div>
-      </div>
-      </PolicyBackground>
+  </div>
+</PolicyBackground>
     );
     }
   export default RegisterForm;
