@@ -30,7 +30,7 @@ const Footer = () => {
             <p className='text-lg'>Data Policy</p>
           </Link>
           <Link to='/impress' className='cursor-pointer hover:opacity-80 text-cbb26a mb-2 block lg:inline-block lg:mb-0 lg:mr-4'>
-            <p className='text-lg'>Impressum</p>
+            <p className='text-lg'>Imprint</p>
           </Link>
         </div>
   
