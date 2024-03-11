@@ -83,7 +83,7 @@ const StoreDetails = () => {
         <div className='w-full p-8 h-128'>
           <MapContainer
             zoom={12}
-            style={{ height: '100%', width: '100%' }}
+            style={{ height: '100%', width: '100%', borderRadius: '15px', border: '2px solid #cbb26a', }}
             center={store.store.location.coordinates}
           >
             <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
