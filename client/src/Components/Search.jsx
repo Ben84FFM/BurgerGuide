@@ -63,7 +63,7 @@ const Search = () => {
             value={search}
             onChange={handleInputChange}
             placeholder='Search...'
-            className='flex-grow px-3 py-2  rounded-md focus:outline-none focus:border-cbb26a mb-2'
+            className='flex-grow px-3 py-2  rounded-md focus:outline-none focus:border-cbb26a mb-2 sm'
           />
           <button
             type='submit'
