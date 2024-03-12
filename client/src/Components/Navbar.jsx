@@ -58,8 +58,8 @@ function Navbar() {
           ABOUT US
         </Link>
         {isLoggedIn ? (
-          <div className='flex flex-col  lg:flex-row '>
-            <p className='px-4'>Welcome {userData.firstName}</p>
+          <div className='flex flex-col lg:flex-row '>
+            <p className='px-4'>Welcome, {userData.firstName}</p>
             <button
               className='px-4  cursor-pointer hover:opacity-80'
               onClick={handleLogout}

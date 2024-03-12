@@ -9,6 +9,7 @@ import 'slick-carousel/slick/slick-theme.css';
 const StoreCarousel = () => {
   const [stores, setStores] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [reviews, setReviews] = useState([]); // if time > time
   const [error, setError] = useState(false);
   const containerRef = useRef(null);
 
@@ -17,6 +18,7 @@ const StoreCarousel = () => {
       try {
         const response = await axios.get('http://localhost:5000/stores');
         setStores(response.data.data);
+        console.log(response.data.data);
         setLoading(false);
       } catch (error) {
         console.error(error);
@@ -68,14 +70,14 @@ const StoreCarousel = () => {
 
   return (
     <div className='container text-center px-4 lg:px-0'>
-      <h2 className='text-2xl lg:text-3xl xl:text-4xl text-cbb26a font-bold mb-6'>
+      <h2 className='text-2xl lg:text-3xl xl:text-4xl text-cbb26a font-bold mb-6 text-outline'>
         Burger & BBQ Stores
       </h2>
-      <Slider {...settings} className='mx-auto max-w-screen-lg'>
+      <Slider {...settings} className='mx-auto w-full mb-12'>
         {stores.map((store) => (
           <div key={store._id} className='flex items-center px-2 lg:px-4'>
             <div className='flex rounded-md overflow-hidden bg-gradient-to-r from-black via-zinc-800 to-black p-4 lg:p-6 shadow-md'>
-              <Link to={`/store/${store._id}`} className='w-32 h-32'>
+              <Link to={`/store/${store._id}`} className='w-48 h-48'>
                 <img
                   src={store.images}
                   alt={store.name}
@@ -83,17 +85,23 @@ const StoreCarousel = () => {
                 />
               </Link>
               <div className='ml-4 flex-grow'>
-                <h3 className='text-sm lg:text-xl xl:text-2xl text-cbb26a font-bold mb-2 overflow-hidden overflow-ellipsis max-w-xs break-all'>
+                <h3 className='text-sm lg:text-xl xl:text-lg text-cbb26a font-bold mb-2 overflow-hidden overflow-ellipsis max-w-xs  '>
                   {store.name}
                 </h3>
-                <p className='text-gray-600 mb-2 text-sm'>
-                  {store.phonenumbers}
+                <p className='text-gray-300 mb-2 text-sm'>
+                  📍 {store.address.street}
+                </p>
+                <p className='text-gray-300 mb-2 text-sm'>
+                  {store.address.zipCode} {store.address.city}
+                </p>
+                <p className='text-gray-300 mb-2 text-sm'>
+                  ☎+49 {store.phonenumbers}
                 </p>
                 <a
                   href={store.website}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='text-blue-500 text-sm'
+                  className='text-blue-500 text-sm hover:opacity-60'
                 >
                   Visit Store
                 </a>

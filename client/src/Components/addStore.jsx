@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import PolicyBackground from './DynamicBackground';
 
-
 const AddStoreForm = () => {
   const [storeName, setStoreName] = useState('');
   const [street, setStreet] = useState('');
@@ -58,8 +57,7 @@ const AddStoreForm = () => {
 
   return (
     <PolicyBackground>
-    <div className='Container flex bg-black '>
-    
+      <div className='Container flex bg-black '>
         <div className='containerLogoTextBox bg-opacity-80 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center bg-black rounded-xl '>
           <img
             src='../src/assets/BurgerGuideLogo3.png'
@@ -169,7 +167,7 @@ const AddStoreForm = () => {
             </div>
           </div>
         </div>
-    </div>
+      </div>
     </PolicyBackground>
   );
 };

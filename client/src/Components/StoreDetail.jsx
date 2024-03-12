@@ -125,7 +125,7 @@ const StoreDetails = () => {
           </div>
         </div>
 
-        <div 
+        <div
           id='burger-map'
           className='flex flex-col md:flex-row justify-between rounded-md mt-4'
           style={{ borderRadius: '0.375rem' }}
@@ -139,22 +139,21 @@ const StoreDetails = () => {
             />
           </div>
 
-
           <div className='w-full p-8 h-128 rounded-md'>
-  <MapContainer
-    zoom={12}
-    style={{
-      height: '100%',
-      width: '100%',
-      minHeight: '200px',
-      borderRadius: '0.375rem',
-    }}
-    center={store.store.location.coordinates}
-  >
-    <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
-    <Marker position={store.store.location.coordinates}></Marker>
-  </MapContainer>
-</div>
+            <MapContainer
+              zoom={12}
+              style={{
+                height: '100%',
+                width: '100%',
+                minHeight: '200px',
+                borderRadius: '0.375rem',
+              }}
+              center={store.store.location.coordinates}
+            >
+              <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
+              <Marker position={store.store.location.coordinates}></Marker>
+            </MapContainer>
+          </div>
         </div>
 
         <div
@@ -171,7 +170,7 @@ const StoreDetails = () => {
             <h3 className='flex text-xl lg:text-2xl font-bold text-cbb26a underline mt-4 mb-4'>
               Reviews from Visitors
             </h3>
-          
+
             <div className='container rounded-md mx-auto sm:px-4 md:px-6 lg:px-8" flex-col space-y-4 max-h-96 overflow-y-auto p-4'>
               {reviews.length > 0 ? (
                 <ul>
@@ -204,18 +203,15 @@ const StoreDetails = () => {
                 <p className='text-cbb26a font-bold'>No Reviews</p>
               )}
             </div>
-          
-            <div className='flex items-center justify-center mt-4'>
-  <Link to={`/reviewStore/${storeId}`}>
-    <button className='mx-auto sm:px-4 md:px-6 lg:px-8 text-xl font-bold text-cbb26a bg-black font-bold text-cbb26a text-center imageBorderLogo py-2 px-4 rounded-md transition duration-300 hover:text-white'>
-      Your Review
-    </button>
-  </Link>
-</div>
-          
-          </div>
 
-         
+            <div className='flex items-center justify-center mt-4'>
+              <Link to={`/reviewStore/${storeId}`}>
+                <button className='mx-auto sm:px-4 md:px-6 lg:px-8 text-xl font-bold text-cbb26a bg-black text-center imageBorderLogo py-2 px-4 rounded-md transition duration-300 hover:text-white'>
+                  Your Review
+                </button>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </PolicyBackground>
