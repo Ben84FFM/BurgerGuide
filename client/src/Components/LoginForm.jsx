@@ -36,40 +36,50 @@ function LoginForm() {
   };
 
   return (
-<PolicyBackground>
-  <div className="flex justify-center items-center h-screen bg-transparent">
-    <div className='rounded-md p-8'>
-      <div className='bg-black bg-opacity-90 rounded-xl shadow-xl shadow-gray-500 p-4'>
-        <h2 className='text-cbb26a text-lg font-bold mb-4'>Login</h2>
-        {error && <p className='text-red-500 mb-4'>{error}</p>}
-        <form onSubmit={handleSubmit}>
-          <div className='Email mb-4'>
-            <p className='block mb-2 text-cbb26a'>Email</p>
-            <input className='border rounded w-full p-2'
-              type='text'
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
+    <PolicyBackground>
+      <div className='flex justify-center items-center h-screen bg-transparent'>
+        <div className='rounded-md p-8'>
+          <div className='bg-black bg-opacity-90 rounded-xl shadow-xl shadow-gray-500 p-4'>
+            <h2 className='text-cbb26a text-lg font-bold mb-4'>Login</h2>
+            {error && <p className='text-red-500 mb-4'>{error}</p>}
+            <form onSubmit={handleSubmit}>
+              <div className='Email mb-4'>
+                <p className='block mb-2 text-cbb26a'>Email</p>
+                <input
+                  className='border rounded w-full p-2'
+                  type='text'
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </div>
+              <div className='Password mb-4'>
+                <p className='block mb-2 text-cbb26a'>Password</p>
+                <input
+                  className='border rounded w-full p-2'
+                  type='password'
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+              </div>
+              <button
+                className='flex justify-center mx-auto sm:px-2 md:px-3 lg:px-8 font-bold text-cbb26a bg-black text-center imageBorderLogo py-2 px-4 mt-2 mb-2 rounded-md transition duration-300 hover:text-white'
+                type='submit'
+              >
+                Login
+              </button>
+              <p className='mt-4'>
+                {' '}
+                <Link to='/register' className='underline text-cbb26a'>
+                  Register here
+                </Link>{' '}
+              </p>
+            </form>
           </div>
-          <div className='Password mb-4'>
-            <p className='block mb-2 text-cbb26a'>Password</p>
-            <input className='border rounded w-full p-2'
-              type='password'
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-          <button className='rounded p-2 mt-2 text-cbb26a text-lg font-bold mb-4' type='submit'>Login</button>
-          <p className='mt-4'> <Link to='/register' className='underline text-cbb26a'>Register here</Link> </p>
-        </form>
+        </div>
       </div>
-    </div>
-  </div>
-</PolicyBackground>
-
-
+    </PolicyBackground>
   );
 }
 
