@@ -99,6 +99,11 @@ const Search = () => {
               Load More
             </button>
           )}
+          <div className="text-cbb26a text-center mt-4">
+            <Link to="/addRestaurant" className="inline-block bg-white text-cbb26a font-bold px-4 py-2 rounded-md transition duration-300 ease-in-out hover:bg-black hover:text-cbb26a focus:outline-none shadow-md border border-gray-500">
+              Your Favorite Store is not here?
+            </Link>
+          </div>
         </div>
       )}
     </div>
