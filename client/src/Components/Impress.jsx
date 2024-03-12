@@ -4,7 +4,7 @@ import PolicyBackground from './DynamicBackground';
 const Impress = () => {
   return (
     <PolicyBackground>
-    <div className="container max-w-2xl mx-auto bg-white shadow-lg rounded-md mt-10 sm:mt-20 p-4 sm:p-8 opacity-80px-8">
+    <div className="container bg-white shadow-lg rounded-md mt-8 mb-8 sm:mt-20 p-4 sm:p-8 opacity-80px-8 inline-block max-w-2xlcontainer bg-white shadow-lg rounded-md mt-8 mb-8 sm:mt-20 p-4 sm:p-8 opacity-80px-8 inline-block max-w-2xl mx-auto my-auto">
   <h1 className="text-3xl font-bold mb-6">Impressum für Burger Guide</h1>
 
   <p className="mb-4"><strong>Stand:</strong> [Datum der letzten Aktualisierung]</p>
@@ -42,7 +42,7 @@ const Impress = () => {
   </div>
 
   <div>
-    <h2 className="text-xl font-bold mb-2">Urheberrecht</h2>
+    <h2 className="text-xl font-bold mb-2 ">Urheberrecht</h2>
     <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.</p>
     <p>Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
   </div>

@@ -67,7 +67,7 @@ const StoreDetails = () => {
               <p className='text-cbb26a mb-2'>{store.store.website}</p>
             </a>
             <p className='text-cbb26a mb-4'>{store.store.phoneNumber}</p>
-            <p className='text-cbb26a font-bold'>Share with your friends</p>
+            <p className='text-cbb26a font-bold'>Share with your Friends</p>
             <br />
             <div className="flex space-x-4">
   {/* Instagram */}
@@ -130,18 +130,18 @@ const StoreDetails = () => {
             justifyContent: 'space-between',
           }}
         >
-          <div className='fer p-8 flex-1 max-w-xl sm:w-full overflow-x-hidden overflow-y-auto'>
-            <h3 className='text-xl lg:text-2xl font-bold text-cbb26a underline'>
-              Reviews
+          <div className='flex-1 max-w-3x sm:w-full overflow-x-hidden overflow-y-auto p-8 '>
+            <h3 className='text-xl lg:text-2xl font-bold text-cbb26a pb-6 underline'>
+              Reviews from Users
             </h3>
-            <div className='flex flex-col space-y-4 max-h-96 overflow-y-auto'>
+            <div className='flex flex-col space-y-4 max-h-96 overflow-y-auto '>
               {reviews.length > 0 ? (
                 <ul>
                   {reviews.map((review) => (
                     <li key={review._id}>
                       <div
                         id='review'
-                        className='flex flex-col items-center rounded-xl bg-slate-200  my-2 p-3 text-gray-600'
+                        className='flex flex-col items-start rounded-xl bg-slate-200  my-2 p-3 text-gray-600'
                       >
                         <div>
                           <Link to='#' className='hover:underline'>
