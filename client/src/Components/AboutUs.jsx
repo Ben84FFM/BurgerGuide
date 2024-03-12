@@ -6,7 +6,7 @@ import PolicyBackground from './DynamicBackground';
 const AboutUs = () => {
   return (
     <PolicyBackground>
-        <div className="ml-4 pt-8 pb-8">
+        <div className="ml-2 mr-4 pt-8 pb-8">
       <div className='Container flex flex-row relative space-x-8'>
         <div className="">
           <img
