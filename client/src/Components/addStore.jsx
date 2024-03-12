@@ -58,28 +58,24 @@ const AddStoreForm = () => {
 
   return (
     <PolicyBackground>
-    <div className='Container flex bg-black '>
-    
-        <div className='containerLogoTextBox bg-opacity-80 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center bg-black rounded-xl '>
+    <div className='container flex justify-center items-center bg-transparent pb-8'>
+        <div className='bg-opacity-90 justify-center bg-black rounded-xl mt-8 mb-4 pr-6 pl-6 '>
           <img
             src='../src/assets/BurgerGuideLogo3.png'
             alt='BurgerGuideLogo'
-            className='w-1/2 h-auto rounded-md mb-4'
+            className='container h-auto rounded-md mb-4 pr-6 pl-6'
           />
-          <div className='containerTextBox text-center'>
-            <div
-              style={{ maxWidth: '400px', margin: 'auto', paddingTop: '20px' }}
-            >
-              <h2 className='text-cbb26a font-bold mb-4'>Add new Restaurant</h2>
-
-              <form onSubmit={handleSubmit}>
+         
+          {/* Container add Store */}
+          <div className='flex justify-center items-center'>
+                  <form onSubmit={handleSubmit} className="container max-w-md "> 
                 <label className='text-cbb26a font-bold'>Restaurant Name</label>
                 <input
                   type='text'
                   value={storeName}
                   placeholder='Restaurant Name'
                   onChange={(e) => setStoreName(e.target.value)}
-                  className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-cbb26a mb-4'
+                  className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-cbb26a mb-4 mt-1 mb-1'
                   required
                 />
 
@@ -89,7 +85,7 @@ const AddStoreForm = () => {
                   value={street}
                   placeholder='Street'
                   onChange={(e) => setStreet(e.target.value)}
-                  className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-cbb26a mb-4'
+                  className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-cbb26a mb-4 mt-1 mb-1'
                   required
                 />
                 <label className='text-cbb26a font-bold'>ZIPCODE</label>
@@ -98,7 +94,7 @@ const AddStoreForm = () => {
                   value={zipCode}
                   onChange={(e) => setZipCode(e.target.value)}
                   placeholder='Zipcode'
-                  className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-cbb26a mb-4'
+                  className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-cbb26a mb-4 mt-1 mb-1'
                   required
                 />
 
@@ -108,7 +104,7 @@ const AddStoreForm = () => {
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
                   placeholder='City'
-                  className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-cbb26a mb-4'
+                  className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-cbb26a mb-4 mt-1 mb-1'
                   required
                 />
                 <label className='text-cbb26a font-bold'>Image</label>
@@ -117,7 +113,7 @@ const AddStoreForm = () => {
                   value={imageUrl}
                   onChange={(e) => setImageUrl(e.target.value)}
                   placeholder='Image URL'
-                  className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-cbb26a mb-4'
+                  className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-cbb26a mb-4 mt-1 mb-1'
                   required
                 />
                 <label className='text-cbb26a font-bold'>Longtidue</label>
@@ -126,7 +122,7 @@ const AddStoreForm = () => {
                   value={longitude}
                   onChange={(e) => setLongitude(e.target.value)}
                   placeholder='Longitude'
-                  className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-cbb26a mb-4'
+                  className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-cbb26a mb-4 mt-1 mb-1'
                   required
                 />
                 <label className='text-cbb26a font-bold'>Latitude</label>
@@ -135,7 +131,7 @@ const AddStoreForm = () => {
                   value={latitude}
                   onChange={(e) => setLatitude(e.target.value)}
                   placeholder='Latitude'
-                  className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-cbb26a mb-4'
+                  className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-cbb26a mb-4 mt-1 mb-1'
                   required
                 />
 
@@ -145,7 +141,7 @@ const AddStoreForm = () => {
                   value={website}
                   onChange={(e) => setWebsite(e.target.value)}
                   placeholder='Website'
-                  className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-cbb26a mb-4'
+                  className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-cbb26a mb-4 mt-1 mb-1'
                   required
                 />
 
@@ -155,20 +151,21 @@ const AddStoreForm = () => {
                   value={phonenumbers}
                   onChange={(e) => setPhonenumbers(e.target.value)}
                   placeholder='Tel.'
-                  className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-cbb26a mb-4'
+                  className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-cbb26a mb-4 mt-1 mb-1'
                   required
                 />
 
                 <button
                   type='submit'
-                  className='bg-cbb26a text-white font-bold px-4 py-2 rounded-md hover:bg-opacity-80 focus:outline-none shadow-md border border-gray-500 mt-4'
+                  className='flex justify-center mx-auto sm:px-4 md:px-6 lg:px-8 text-xl font-bold text-cbb26a bg-black font-bold text-cbb26a text-center imageBorderLogo py-2 px-4 rounded-md transition duration-300 hover:text-white mt-6 mb-8'
                 >
                   Add Store
                 </button>
+              
               </form>
             </div>
-          </div>
         </div>
+        
     </div>
     </PolicyBackground>
   );

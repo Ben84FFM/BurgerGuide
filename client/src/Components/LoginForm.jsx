@@ -61,7 +61,7 @@ function LoginForm() {
               required
             />
           </div>
-          <button className='rounded p-2 mt-2 text-cbb26a text-lg font-bold mb-4' type='submit'>Login</button>
+          <button className='flex justify-center mx-auto sm:px-2 md:px-3 lg:px-8 font-bold text-cbb26a bg-black font-bold text-center imageBorderLogo py-2 px-4 mt-2 mb-2 rounded-md transition duration-300 hover:text-white' type='submit'>Login</button>
           <p className='mt-4'> <Link to='/register' className='underline text-cbb26a'>Register here</Link> </p>
         </form>
       </div>

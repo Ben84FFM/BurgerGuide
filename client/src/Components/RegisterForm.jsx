@@ -44,7 +44,7 @@ function RegisterForm() {
 
     return (
 <PolicyBackground className="bg-black bg-opacity-70 min-h-screen flex justify-center items-center">
-  <div className="container flex flex-col items-center border-slate-50 rounded-xl shadow-xl shadow-gray-500 py-8">
+  <div className="container flex flex-col items-center border-slate-50 rounded-xl  py-8">
     <div className="text-center bg-opacity-70">
       <div className="bg-black mx-auto max-w-lg rounded-xl shadow-xl shadow-gray-500 p-8">
         <h2 className="text-cbb26a text-xl font-bold mb-4">Registration</h2>
@@ -99,9 +99,12 @@ function RegisterForm() {
               required
             />
           </div>
-          <button className="text-cbb26a font-bold mb-4 rounded p-2 mt-4" type="submit">
-            Register
+          <button className="flex mx-auto sm:px-2 md:px-3 lg:px-8 font-bold text-cbb26a bg-black font-bold text-center imageBorderLogo py-2 px-4 mt-2 mb-2 rounded-md transition duration-300 hover:text-white" type="submit">
+            Registration
           </button>
+        
+        <p className='text-cbb26a'>You have a Account?</p>
+        
         </form>
         <p className="mt-4">
           <Link to="/login" className="text-cbb26a underline">
