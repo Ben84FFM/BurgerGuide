@@ -10,7 +10,7 @@ const HeroSection = () => {
           <img
             src="../src/assets/BurgerGuideLogo3.png"
             alt="BurgerGuideLogo"
-            className="w-1/2 h-auto rounded-md mb-4 pt-4 pb-4"
+            className="w-1/2 h-auto mb-4 pt-4 pb-4"
           />
           <div className="container TextBox text-center max-w-screen-md mx-auto p-8 bg-opacity-80 rounded-xl">
             <h1 className="text-cbb26a text-3xl lg:text-4xl xl:text-5xl font-bold mb-4">BurgerGuide</h1>

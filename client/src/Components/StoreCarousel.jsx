@@ -69,7 +69,7 @@ const StoreCarousel = () => {
   <Slider {...settings} className="mx-auto max-w-screen-lg">
     {stores.map((store) => (
       <div key={store._id} className="flex items-center px-2 lg:px-4">
-        <div className="flex rounded-md overflow-hidden bg-gradient-to-r from-white via-gray-400 to-gray-600 p-4 lg:p-6 shadow-md">
+        <div className="flex rounded-md overflow-hidden bg-gradient-to-r from-black via-zinc-800 to-black p-4 lg:p-6 shadow-md">
           <Link to={`/store/${store._id}`} className="w-32 h-32">
             <img
               src={store.images}
