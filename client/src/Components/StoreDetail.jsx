@@ -4,7 +4,12 @@ import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 import axios from 'axios';
 import ReactStars from 'react-stars';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faFacebook, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import {
+  faInstagram,
+  faFacebook,
+  faTwitter,
+  faWhatsapp,
+} from '@fortawesome/free-brands-svg-icons';
 import 'leaflet/dist/leaflet.css';
 import PolicyBackground from './DynamicBackground';
 
@@ -63,35 +68,61 @@ const StoreDetails = () => {
               📍
               {`${store.store.address.street}, ${store.store.address.zipCode} ${store.store.address.city}`}
             </p>
-            <a href={store.store.website}>
-              <p className='text-cbb26a mb-2'>{store.store.website}</p>
+            <a href={store.store.website} target='_blank'>
+              <p className='text-cbb26a mb-2 hover:opacity-80'>
+                {store.store.website}
+              </p>
             </a>
             <p className='text-cbb26a mb-4'>{store.store.phoneNumber}</p>
             <p className='text-cbb26a font-bold'>Share with your Friends</p>
             <br />
-            <div className="flex space-x-4">
-  {/* Instagram */}
-  <a href={`https://www.instagram.com/${store.store.instagram}`} target="_blank" rel="noopener noreferrer">
-    <FontAwesomeIcon icon={faInstagram} className="text-2xl text-cbb26a cursor-pointer" />
-  </a>
-  {/* Facebook */}
-  <a href={`https://www.facebook.com/${store.store.facebook}`} target="_blank" rel="noopener noreferrer">
-    <FontAwesomeIcon icon={faFacebook} className="text-2xl text-cbb26a cursor-pointer" />
-  </a>
-  {/* Twitter */}
-  <a href={`https://twitter.com/${store.store.twitter}`} target="_blank" rel="noopener noreferrer">
-    <FontAwesomeIcon icon={faTwitter} className="text-2xl text-cbb26a cursor-pointer" />
-  </a>
-  {/* WhatsApp */}
-  <a href={`https://wa.me/${store.store.whatsapp}`} target="_blank" rel="noopener noreferrer">
-    <FontAwesomeIcon icon={faWhatsapp} className="text-2xl text-cbb26a cursor-pointer" />
-  </a>
-</div>
-          
-          
+            <div className='flex space-x-4'>
+              {/* Instagram */}
+              <a
+                href={`https://www.instagram.com/${store.store.instagram}`}
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <FontAwesomeIcon
+                  icon={faInstagram}
+                  className='text-2xl text-cbb26a cursor-pointer hover:opacity-80'
+                />
+              </a>
+              {/* Facebook */}
+              <a
+                href={`https://www.facebook.com/${store.store.facebook}`}
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <FontAwesomeIcon
+                  icon={faFacebook}
+                  className='text-2xl text-cbb26a cursor-pointer hover:opacity-80'
+                />
+              </a>
+              {/* Twitter */}
+              <a
+                href={`https://twitter.com/${store.store.twitter}`}
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <FontAwesomeIcon
+                  icon={faTwitter}
+                  className='text-2xl text-cbb26a cursor-pointer hover:opacity-80'
+                />
+              </a>
+              {/* WhatsApp */}
+              <a
+                href={`https://wa.me/${store.store.whatsapp}`}
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <FontAwesomeIcon
+                  icon={faWhatsapp}
+                  className='text-2xl text-cbb26a cursor-pointer hover:opacity-80'
+                />
+              </a>
+            </div>
           </div>
-
-        
         </div>
 
         <div
@@ -111,7 +142,11 @@ const StoreDetails = () => {
           <div className='w-full p-8 h-128 rounded-md'>
             <MapContainer
               zoom={12}
-              style={{ height: '100%', width: '100%', borderRadius: '0.375rem' }}
+              style={{
+                height: '100%',
+                width: '100%',
+                borderRadius: '0.375rem',
+              }}
               center={store.store.location.coordinates}
             >
               <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
@@ -141,7 +176,7 @@ const StoreDetails = () => {
                     <li key={review._id}>
                       <div
                         id='review'
-                        className='flex flex-col items-start rounded-xl bg-slate-200  my-2 p-3 text-gray-600'
+                        className='flex flex-col items-start rounded-xl bg-slate-200 my-2 p-3 text-gray-600'
                       >
                         <div>
                           <Link to='#' className='hover:underline'>
@@ -170,7 +205,7 @@ const StoreDetails = () => {
 
           <div className='p-8' style={{ alignSelf: 'center' }}>
             <Link to={`/reviewStore/${storeId}`}>
-              <button className='text-xl font-bold text-cbb26a bg-black p-2 border-cbb26a rounded-md hover:bg-cbb26aHover hover:text-white transition duration-300 rounded-xl'>
+              <button className='text-xl font-bold text-cbb26a bg-black p-2 border-cbb26a rounded-md hover:bg-cbb26aHover hover:text-white transition duration-300 border-2 imageBorderLogo'>
                 Rate this store
               </button>
             </Link>
