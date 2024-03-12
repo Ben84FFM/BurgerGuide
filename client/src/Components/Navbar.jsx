@@ -46,8 +46,8 @@ function Navbar() {
 
       <div className=' bg-center flex items-center justify-center '>
         <h1
-          className='text-6xl font-serif '
-          style={{ transform: 'scalex(0.7)' }}
+          className='text-6xl font-bold'
+          style={{ transform: 'scalex(1)', fontFamily: 'Alex Brush, cursive' }}
         >
           BurgerGuide
         </h1>
