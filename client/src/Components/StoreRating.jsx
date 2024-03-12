@@ -168,9 +168,10 @@ const BurgerRating = () => {
       )}
 
       {submitted && !showRatingForm && (
-        <div className='pt-4 pb-8 ml-4 mr-4 flex items-center justify-center'>
-          <div className='p-4 bg-black rounded-md mt-8'>
-            <p className='text-cbb26a mt-2'>Thank you for your rating!</p>
+        <div className='pt-4 pb-8 ml-4 mr-4 flex items-center justify-center '>
+          <div className='p-4 bg-black rounded-md mt-8 imageBorderLogo'>
+            <p className='text-cbb26a mt-2 font-bold'>Thank you for your Rating!</p>
+            
           </div>
         </div>
       )}

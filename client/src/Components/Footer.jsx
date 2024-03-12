@@ -21,9 +21,12 @@ const Footer = () => {
           >
             <p className='text-lg'>
               <FontAwesomeIcon icon={faHome} /> Home
+             
             </p>
           </Link>
         </div>
+
+        
 
         <div className='footer-section justify-center mt-4 lg:mt-0 w-full lg:w-1/2'>
           <Link

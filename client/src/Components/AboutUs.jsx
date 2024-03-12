@@ -33,7 +33,8 @@ const AboutUs = () => {
 
       <p className="text-cbb26a mb-4">Burger Guide is not just an app – it's the result of our passion for good food. As developers, we look forward to having you join this journey and explore the world of burgers with us!</p>
 
-    <p className='text-cbb26a font-bold text-center'>Enjoy your meal and have fun discovering burgers with Burger Guide!</p>
+    <p className='text-cbb26a font-bold text-center'>Enjoy your meal and have fun discovering burgers with Burger Guide!</p><br />
+
   </div>
   <TechStCarouselButton/>
 </div>
