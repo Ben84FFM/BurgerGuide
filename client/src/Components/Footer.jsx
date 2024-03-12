@@ -12,7 +12,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className='container flex bg-black text-cbb26a py-8 border-t-4 footerBorder'>
+    <footer className='container flex bg-gradient-to-r from-black via-zinc-800 to-black p-4 text-cbb26a py-8 border-t-4 footerBorder'>
       <div className='container mx-auto flex flex-wrap justify-center lg:justify-between ml-4'>
         <div className='footer-section mb-4 lg:mb-0 w-full lg:w-1/4'>
           <Link
@@ -25,7 +25,7 @@ const Footer = () => {
           </Link>
         </div>
 
-        <div className='footer-section mt-4 lg:mt-0 w-full lg:w-1/2'>
+        <div className='footer-section justify-center mt-4 lg:mt-0 w-full lg:w-1/2'>
           <Link
             to='/about'
             className='cursor-pointer hover:opacity-80 text-cbb26a mb-2 block lg:inline-block lg:mb-0 lg:mr-4'

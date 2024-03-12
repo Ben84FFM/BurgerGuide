@@ -6,17 +6,16 @@ import PolicyBackground from './DynamicBackground';
 const AboutUs = () => {
   return (
     <PolicyBackground>
-        <div className="pt-8 pb-8">
+        <div className="ml-4 pt-8 pb-8">
       <div className='Container flex flex-row relative space-x-8'>
-        <div className="LogoImage ">
+        <div className="">
           <img
             src="../src/assets/BurgerGuideLogo2.png"
             alt="BurgerGuideLogo"
-            className="h-auto mb-4 rounded-xl"
+            className="container imageBorderLogo h-auto mb-4 rounded-xl "
           />
-          <div className="LogoBorder"></div>
-        </div>
-
+          </div>
+        
         <div className="lg:w-1/2 space-y-4 bg-black bg-opacity-75 p-8 rounded-xl">
   <div className="text-cbb26a">
     <h1 className="text-3xl font-bold text-center mb-4">Behind the Scenes with the Developers</h1>

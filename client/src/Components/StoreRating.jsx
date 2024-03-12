@@ -86,32 +86,30 @@ const BurgerRating = () => {
   return (
         <PolicyBackground>
       {/* ContainerText */}
-      <div className='containerText flex flex-1 pt-8 pb-8'>
+      <div className='containerText flex flex-1 pt-8 pb-4'>
         <p className='container text-cbb26a mx-auto p-4 lg:w-2/3 xl:w-1/2 bg-black opacity-80 rounded-md pt-8 pb-8'>
           <p className='font-bold'>Dear Users,</p>
-          <p>
+          <p><br />
             We would like to emphasize the importance of providing a fair review
             for our BurgerStore. Our community and future customers rely on your
             honest opinions to make informed decisions about their visit.
-          </p>
-          <p>
+          </p><br /><p>
             Fair reviews not only assist others in selecting the right BurgerStore
             but also help us continuously improve our service and products. Your
             feedback is invaluable and enables us to respond to your needs, creating
             a better shopping experience.
-          </p>
-          <p>
+          </p><br /> <p>
             Please take a moment to share your experiences fairly and objectively.
             Include both positive and constructive criticism. Your contribution
             helps build an open and transparent community.
-          </p>
-          <p className='font-bold'>Thank you for your support!</p>
+          </p><br />
+          <p className='font-bold'>Thank you for your support!</p><br />
           <p className='font-bold'>Your BurgerGuideTeam!</p>
         </p>
       </div>
 
       {/* ContainerRating */}
-      <div className=''>
+      <div className='pt-4 pb-8 flex items-center justify-center'>
       <div className='p-4 bg-black rounded-md mt-8'>
         <h2 className='text-2xl font-bold text-cbb26a mb-4'>
           Burger Rating for {store.name}
@@ -120,7 +118,7 @@ const BurgerRating = () => {
           type='text'
           value={comment}
           onChange={(e) => setComment(e.target.value)}
-          placeholder='Your comment here'
+          placeholder='Please be fair and respectful in your review.'
           className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-cbb26a mb-4 '
         />
         {Object.keys(ratings).map((category) => (
@@ -152,7 +150,7 @@ const BurgerRating = () => {
         )}
         {!submitted && (
           <button
-            className='bg-blue-500 text-white py-2 px-4 rounded-md cursor-pointer mt-4'
+            className='flex items-center justify-center mx-auto sm:px-4 md:px-6 lg:px-8 text-xl font-bold text-cbb26a bg-black font-bold text-cbb26a text-center imageBorderLogo py-2 px-4 rounded-md transition duration-300 hover:text-white'
             onClick={handleSubmit}
           >
             Submit

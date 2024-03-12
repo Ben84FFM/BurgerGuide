@@ -7,55 +7,57 @@ import PolicyBackground from './DynamicBackground';
 
 const PrivacyPolicy = () => {
   return (
-    <PolicyBackground>
-    <div className="container bg-white shadow-lg rounded-md mt-8 mb-8 sm:mt-20 p-4 sm:p-8 opacity-80px-8 inline-block max-w-2xlcontainer bg-white shadow-lg rounded-md mt-8 mb-8 sm:mt-20 p-4 sm:p-8 opacity-80px-8 inline-block max-w-2xl mx-auto my-auto">
-      <h1 className="text-3xl font-bold mb-6">Datenschutzrichtlinie für Burger Guide</h1>
+<PolicyBackground>
+  <div className="flex items-center justify-center opacity-90">
+    <div className="container bg-white shadow-lg rounded-md mt-8 mb-8 sm:mt-20 p-4 sm:p-8 opacity-80px-8 inline-block max-w-2xl mx-auto my-auto">
+      <h1 className="text-3xl font-bold mb-6">Privacy Policy for Burger Guide</h1>
 
-      <p className="mb-4"><strong>Stand:</strong> [Datum der letzten Aktualisierung]</p>
+      <p className="mb-4"><strong>Effective Date:</strong> [12.03.2024]</p>
 
       <div className="mb-6">
-        <h2 className="text-xl font-bold mb-2">1. Einleitung</h2>
+        <h2 className="text-xl font-bold mb-2">1. Introduction</h2>
         <p>
-          Willkommen beim Burger Guide! Diese Datenschutzrichtlinie erläutert, wie wir Informationen sammeln, verwenden, speichern und schützen. Indem Sie den Burger Guide nutzen, stimmen Sie den Bedingungen dieser Richtlinie zu.
+          Welcome to Burger Guide! This privacy policy explains how we collect, use, store, and protect information. By using Burger Guide, you agree to the terms of this policy.
         </p>
       </div>
 
       <div className="mb-6">
-        <h2 className="text-xl font-bold mb-2">2. Welche Daten wir sammeln</h2>
+        <h2 className="text-xl font-bold mb-2">2. What Data We Collect</h2>
 
         <div className="mb-4">
-          <h3 className="text-lg font-bold mb-2">2.1 Nutzerdaten:</h3>
-          <p>Der Burger Guide kann personenbezogene Daten wie Ihren Benutzernamen, Ihre E-Mail-Adresse und andere relevante Informationen sammeln, um Ihre Nutzung der Anwendung zu verbessern.</p>
+          <h3 className="text-lg font-bold mb-2">2.1 User Data:</h3>
+          <p>Burger Guide may collect personally identifiable information such as your username, email address, and other relevant details to enhance your use of the application.</p>
         </div>
 
         <div>
-          <h3 className="text-lg font-bold mb-2">2.2 Standortdaten:</h3>
-          <p>Um Ihnen relevante Informationen zu lokalen Burger-Restaurants bereitzustellen, kann der Burger Guide auf Ihren Standort zugreifen. Dies geschieht jedoch nur mit Ihrer ausdrücklichen Zustimmung.</p>
+          <h3 className="text-lg font-bold mb-2">2.2 Location Data:</h3>
+          <p>To provide you with relevant information about local burger restaurants, Burger Guide may access your location. However, this is done only with your explicit consent.</p>
         </div>
       </div>
 
       <div className="mb-6">
-        <h2 className="text-xl font-bold mb-2">3. Wie wir Daten verwenden</h2>
+        <h2 className="text-xl font-bold mb-2">3. How We Use Data</h2>
 
         <div className="mb-4">
-          <h3 className="text-lg font-bold mb-2">3.1 Verbesserung der Anwendung:</h3>
-          <p>Wir verwenden die gesammelten Daten, um die Burger Guide-Anwendung zu verbessern, personalisierte Empfehlungen bereitzustellen und die Benutzererfahrung zu optimieren.</p>
+          <h3 className="text-lg font-bold mb-2">3.1 Application Improvement:</h3>
+          <p>We use collected data to enhance the Burger Guide application, provide personalized recommendations, and optimize the user experience.</p>
         </div>
         <div>
-          <h3 className="text-lg font-bold mb-2">3.2 Kommunikation:</h3>
-          <p>Wir können Ihre E-Mail-Adresse verwenden, um Ihnen relevante Updates, Neuigkeiten und Werbemitteilungen im Zusammenhang mit dem Burger Guide zuzusenden. Sie können sich jederzeit abmelden.</p>
+          <h3 className="text-lg font-bold mb-2">3.2 Communication:</h3>
+          <p>We may use your email address to send you relevant updates, news, and promotional messages related to Burger Guide. You can unsubscribe at any time.</p>
         </div>
       </div>
       <div className="mb-6">
-        <h2 className="text-xl font-bold mb-2">4. Datenschutz und Sicherheit</h2>
-        <p>Wir setzen angemessene Sicherheitsmaßnahmen ein, um Ihre Daten vor unbefugtem Zugriff, Verlust, Missbrauch oder Änderung zu schützen. Wir geben Ihre Daten nicht an Dritte weiter, es sei denn, dies ist gesetzlich vorgeschrieben oder Sie stimmen ausdrücklich zu.</p>
+        <h2 className="text-xl font-bold mb-2">4. Data Privacy and Security</h2>
+        <p>We implement reasonable security measures to protect your data from unauthorized access, loss, misuse, or alteration. We do not share your data with third parties unless required by law or with your explicit consent.</p>
       </div>
       <div>
-        <h2 className="text-xl font-bold mb-2">5. Änderungen an der Datenschutzrichtlinie</h2>
-        <p>Der Burger Guide kann diese Datenschutzrichtlinie von Zeit zu Zeit aktualisieren. Die neueste Version wird auf der Website veröffentlicht, und die Fortsetzung der Nutzung der Anwendung nach Änderungen gilt als Zustimmung zu den aktualisierten Bedingungen.</p>
+        <h2 className="text-xl font-bold mb-2">5. Changes to the Privacy Policy</h2>
+        <p>Burger Guide may update this privacy policy from time to time. The latest version will be published on the website, and continued use of the application after changes will be considered as acceptance of the updated terms.</p>
       </div>
     </div>
-    </PolicyBackground>
+  </div>
+</PolicyBackground>
   );
 };
 

@@ -17,7 +17,7 @@ const TechStCarouselButton = () => {
       <h1 className="text-xs mb-2 text-cbb26a font-bold">Our TechStack we used to build BurgerGuide</h1>
       <button
         onClick={handleContactButtonClick}
-        className="bg-black font-bold text-cbb26a text-center py-2 px-4 rounded-md transition duration-300 hover:bg-gray-800"
+        className="bg-black font-bold text-cbb26a text-center imageBorderLogo py-2 px-4 rounded-md transition duration-300 hover:text-white"
       >
         SHOW
       </button>
