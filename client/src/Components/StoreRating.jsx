@@ -86,7 +86,7 @@ const BurgerRating = () => {
   return (
         <PolicyBackground>
       {/* ContainerText */}
-      <div className='containerText flex flex-1 pt-8 pb-4'>
+      <div className='containerText flex flex-1 ml-6 mr-6 pt-8 pb-4'>
         <p className='container text-cbb26a mx-auto p-4 lg:w-2/3 xl:w-1/2 bg-black opacity-80 rounded-md pt-8 pb-8'>
           <p className='font-bold'>Dear Users,</p>
           <p><br />
@@ -109,7 +109,7 @@ const BurgerRating = () => {
       </div>
 
       {/* ContainerRating */}
-      <div className='pt-4 pb-8 flex items-center justify-center'>
+      <div className='pt-4 pb-8 ml-4 mr-4 flex items-center justify-center'>
       <div className='p-4 bg-black rounded-md mt-8'>
         <h2 className='text-2xl font-bold text-cbb26a mb-4'>
           Burger Rating for {store.name}
