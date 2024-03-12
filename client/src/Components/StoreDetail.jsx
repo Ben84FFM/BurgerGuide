@@ -168,7 +168,7 @@ const StoreDetails = () => {
           }}
         >
           <div className='container mx-auto sm:px-4 md:px-6 lg:px-8" overflow-x-hidden overflow-y-auto p-6'>
-            <h3 className='flex text-xl lg:text-2xl font-bold text-cbb26a underline'>
+            <h3 className='flex text-xl lg:text-2xl font-bold text-cbb26a underline mt-4 mb-4'>
               Reviews from Visitors
             </h3>
           
