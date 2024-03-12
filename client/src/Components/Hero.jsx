@@ -1,4 +1,7 @@
 import StoreCarousel from "./StoreCarousel";
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 
 const HeroSection = () => {
   return (
@@ -12,7 +15,14 @@ const HeroSection = () => {
     className="imageBorderLogo mb-4 rounded-xl lg:order-1"
   />
   <div className="container ml-4 text-center lg:text-left max-w-screen-md mx-auto p-8 bg-opacity-80 rounded-xl lg:order-2">
-    <h1 className="text-cbb26a text-3xl lg:text-4xl xl:text-5xl font-bold mb-4">Welcome to BurgerGuide</h1>
+    {/* <h1 className="text-cbb26a text-3xl lg:text-4xl xl:text-5xl font-bold mb-4">Welcome to BurgerGuide</h1> */}
+    <h1
+          className='text-cbb26a text-3xl lg:text-4xl xl:text-5xl font-bold mb-4'
+          style={{ transform: 'scalex(1)', fontFamily: 'Alex Brush, cursive' }}
+        >Welcome to BurgerGuide
+        </h1>
+
+    
     <p className="text-cbb26a mb-4">
     The ultimate hub for burger enthusiasts! <br />Our passion for burgers has inspired us to create this platform. In a world where there was no dedicated space for burger fans, we decided to take matters into our own hands.
     </p>
@@ -22,6 +32,13 @@ const HeroSection = () => {
     <p className="text-cbb26a mb-4">
    Let's embark on this flavorful journey together and discover the tastiest burger destinations in town! 
     </p>
+    <Link
+  to='/burgerstores'
+  className='text-cbb26a font-bold  mb-4 px-4 cursor-pointer hover:opacity-80 flex items-center'
+>
+  <FontAwesomeIcon icon={faArrowAltCircleRight} className='text-cbb26a mr-2' />
+  To the Stores
+</Link>
   </div>
 </div>
       </div>

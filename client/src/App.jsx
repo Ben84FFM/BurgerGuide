@@ -14,6 +14,7 @@ import BurgerRating from './Components/StoreRating';
 import PrivacyPolicy from './Components/dataPolicy';
 import Impress from './Components/Impress';
 
+
 function App() {
   return (
     <>
