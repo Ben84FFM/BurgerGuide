@@ -32,7 +32,7 @@ const PolicyBackground = ({ children }) => {
   };
 
   return (
-    <div className="bg-white min-h-screen container flex" style={backgroundStyle}>
+    <div className="container bg-white min-h-screen " style={backgroundStyle}>
       {children}
     </div>
   );
