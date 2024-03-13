@@ -7,7 +7,7 @@ import {
   faFacebook,
 } from '@fortawesome/free-brands-svg-icons';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
-// import ContactUs from './ContactUs';
+import ContactUs from './ContactForm';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -26,8 +26,8 @@ const Footer = () => {
             </p>
           </Link>
         </div>
-{/* 
-     <ContactUs />    */}
+
+     <ContactUs />   
 
         <div className='footer-section justify-center mt-4 lg:mt-0 w-full lg:w-1/2'>
           <Link
