@@ -10,7 +10,7 @@ function Navbar() {
   const handleLogout = async () => {
     try {
       await axios.post(
-        `http://localhost:5000/auth/logout`,
+        `https://burgerguide-ecdo.onrender.com/auth/logout`,
         {},
         { withCredentials: true }
       );

@@ -44,11 +44,14 @@ export const signIn = asyncHandler(async (req, res, next) => {
   const match = await bcrypt.compare(password, existingUser.password);
   if (!match) throw new ErrorResponse('Pasword is incorrect', 401);
 
-  const token = jwt.sign({ uid: existingUser._id }, process.env.JWT_SECRET, {
-    expiresIn: '30m',
+  const token = jwt.sign({ uid: existingUser._id }, process.env.JWT_SECRET);
+  res.cookie("token", token, {
+    httpOnly: true,
+    sameSite: "None",
+    secure: true,
+    maxAge: 1800000,
   });
-  res.cookie('token', token, { maxAge: 1800000 }); //30mn
-  res.send({ token });
+  res.status(200).send();
 });
 
 // VerifyUser
@@ -59,6 +62,10 @@ export const getUser = asyncHandler(async (req, res, next) => {
 
 // Logout
 export const logout = asyncHandler(async (req, res, next) => {
-  res.clearCookie('token');
-  res.send({ status: 'success' });
+  res.clearCookie("token", {
+    httpOnly: true,
+    sameSite: "None",
+    secure: true,
+  });
+  res.status(200).send({ status: "success" });
 });

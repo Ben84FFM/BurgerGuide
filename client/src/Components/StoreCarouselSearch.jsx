@@ -17,7 +17,7 @@ const StoreCarouselSearch = () => {
   useEffect(() => {
     const fetchStores = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/stores');
+        const response = await axios.get('https://burgerguide-ecdo.onrender.com/stores');
         setStores(response.data.data);
         setLoading(false);
       } catch (error) {

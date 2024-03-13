@@ -17,7 +17,7 @@ function RegisterForm() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `http://localhost:5000/auth/register`,
+        `https://burgerguide-ecdo.onrender.com/auth/register`,
 
         {
           firstName,

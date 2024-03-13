@@ -23,7 +23,7 @@ const SearchNavBar = () => {
           return;
         }
         const response = await axios.get(
-          `http://localhost:5000/stores/search?store=${search}`,
+          `https://burgerguide-ecdo.onrender.com/stores/search?store=${search}`,
           { withCredentials: true }
         );
         setSearchResults(response.data);

@@ -25,8 +25,8 @@ const StoreDetails = () => {
       setLoading(true);
       try {
         const [storeResponse, reviewsResponse] = await Promise.all([
-          axios.get(`http://localhost:5000/stores/${storeId}`),
-          axios.get(`http://localhost:5000/reviews/${storeId}`),
+          axios.get(`https://burgerguide-ecdo.onrender.com/stores/${storeId}`),
+          axios.get(`https://burgerguide-ecdo.onrender.com/reviews/${storeId}`),
         ]);
         setStore(storeResponse.data.data);
         setReviews(reviewsResponse.data.data.reviews);

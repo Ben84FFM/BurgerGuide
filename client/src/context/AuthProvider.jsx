@@ -10,12 +10,12 @@ export const useAuth = () => useContext(AuthContext);
 export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState({});
-
+  
   const checkUser = async () => {
     try {
       const response = await axios.get(
-        // `${import.meta.env.VITE_API_URL}/auth/me`,
-        `http://localhost:5000/auth/me`,
+        
+        'https://burgerguide-ecdo.onrender.com/auth/me',
         {
           withCredentials: true,
         }

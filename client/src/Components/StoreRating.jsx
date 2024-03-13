@@ -36,7 +36,7 @@ const BurgerRating = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:5000/reviews/${storeId}`,
+        `https://burgerguide-ecdo.onrender.com/reviews/${storeId}`,
         {
           comment,
           cleanliness: ratings.cleanliness,
@@ -61,7 +61,7 @@ const BurgerRating = () => {
     const fetchStore = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/stores/${storeId}`
+          `https://burgerguide-ecdo.onrender.com/stores/${storeId}`
         );
         // console.log(response);
         setStore(response.data.data.store);

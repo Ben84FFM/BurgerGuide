@@ -32,7 +32,7 @@ const AddStoreForm = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:5000/stores',
+        'https://burgerguide-ecdo.onrender.com/stores',
         storeData,
         {
           withCredentials: true,
