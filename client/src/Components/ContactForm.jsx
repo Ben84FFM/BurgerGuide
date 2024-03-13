@@ -11,7 +11,7 @@ function ContactUs() {
     e.preventDefault();
 
     if (name && email && message) {
-      emailjs.sendForm('mein_emailjs_dienst', 'meine_vorlage', e.target, 'user_YOUR_USER_ID')
+      emailjs.sendForm('template_9fqfs8d', 'BurgerGuideSupportTemplate', e.target, 'JWeb1C0pHP-Qw3Ezw')
         .then((result) => {
           console.log('Erfolgreich gesendet:', result.text);
           setIsOpen(false);
