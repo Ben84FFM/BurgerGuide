@@ -77,7 +77,7 @@ const SearchNavBar = () => {
             onChange={handleInputChange}
             placeholder='Search...'
             className='px-3 py-2 text-zinc-600 rounded-md focus:outline-none focus:border-cbb26a mb-2 text-sm'
-            style={{ width: '250px' }} // Set a fixed width
+            style={{ width: '250px' }} 
           />
           <button
             type='submit'
@@ -93,7 +93,7 @@ const SearchNavBar = () => {
           ref={dropdownRef}
           className='bg-zinc-900 p-8 rounded-xl text-sm opacity-90'
         >
-          <h2 className='mb-2'>Your Results</h2>
+          <h2 className='mb-2'>Burger Stores</h2>
           <ul>
             {searchResults.slice(0, visibleResults).map((result) => (
               <Link
@@ -113,12 +113,12 @@ const SearchNavBar = () => {
               Load More
             </button>
           )}
-          <div className='text-cbb26a mt-4'>
+          <div className='mx-auto sm:px-4 md:px-6 lg:px-8 text-xl font-bold text-cbb26a bg-black text-center imageBorderLogo py-2 px-4 rounded-md transition duration-300 hover:text-white mt-2'>
             <Link
               to='/addRestaurant'
-              className='text-sm text-white hover:opacity-80 underline'
+              className='text-sm hover:text-white mt-2 underline'
             >
-              Your Favorite Store is not here?
+              Add your Favorite Store here !
             </Link>
           </div>
         </div>

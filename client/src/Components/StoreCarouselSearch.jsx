@@ -67,10 +67,15 @@ const StoreCarouselSearch = () => {
   }
 
   return (
-    <div className="container text-center px-4 lg:px-0">
-      <h2 className="text-2xl lg:text-3xl xl:text-4xl text-cbb26a font-bold mb-6 pb-6">
-        Burger & BBQ Stores
-      </h2>
+    <div className="container  text-center px-4 lg:px-0">
+           
+      <h1
+          className='text-cbb26a font-bold text-4xl font-bold pt-2 pb-2'
+          style={{ transform: 'scalex(1)', fontFamily: 'Alex Brush, cursive' }}
+        >
+           Burger & BBQ Stores
+        </h1>
+  
       <Slider {...settings} className="mx-auto max-w-screen-lg">
         {stores.map((store) => (
           <div key={store._id} className="flex items-center px-2 lg:px-4 text-left ">

@@ -10,7 +10,7 @@ const PrivacyPolicy = () => {
 <PolicyBackground>
   <div className="flex items-center justify-center ml-6 mr-6 opacity-90">
     <div className="container bg-white shadow-lg rounded-md mt-8 mb-8 sm:mt-20 p-4 sm:p-8 opacity-80px-8 inline-block max-w-2xl mx-auto my-auto">
-      <h1 className="text-3xl font-bold mb-6">Privacy Policy for Burger Guide</h1>
+      <h1 className="text-2xl font-bold mb-6">Privacy Policy for Burger Guide</h1>
 
       <p className="mb-4"><strong>Effective Date:</strong> [12.03.2024]</p>
 

@@ -21,7 +21,7 @@ function Navbar() {
   };
 
   return (
-    <div className='container flex flex-col h-72 lg:flex-row lg:h-32 bg-gradient-to-r from-black via-zinc-800 to-black p-4 text-base  text-cbb26a relative z-10 NavbarBorder '>
+    <div className='container-lg flex flex-col h-72 lg:flex-row lg:h-32 bg-gradient-to-r from-black via-zinc-800 to-black p-4 text-base  text-cbb26a relative z-10 NavbarBorder '>
       <div
         className=' flex-1 flex flex-col xl:flex-row 
       text-lg uppercase font-bold pt-4 '

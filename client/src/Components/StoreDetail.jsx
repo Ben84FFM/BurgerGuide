@@ -50,7 +50,7 @@ const StoreDetails = () => {
 
   return (
     <PolicyBackground>
-      <div className='container flex flex-col w-full p-4'>
+      <div className='containerflex flex-col w-full p-4'>
         <div id='burger-store' className='p-8 flex rounded-md'>
           <div>
             <h2 className='text-2xl lg:text-3xl xl:text-4xl font-bold text-cbb26a'>

@@ -6,8 +6,8 @@ import PolicyBackground from './DynamicBackground';
 const AboutUs = () => {
   return (
     <PolicyBackground>
-        <div className="ml-2 mr-4 pt-8 pb-8">
-      <div className='Container flex flex-row relative space-x-8'>
+        <div className="container-lg ml-2 mr-4 pt-8 pb-8">
+      <div className='container-lg flex flex-row relative space-x-8'>
         <div className="">
           <img
             src="../src/assets/BurgerGuideLogo2.png"
@@ -16,7 +16,7 @@ const AboutUs = () => {
           />
           </div>
         
-        <div className="lg:w-1/2 space-y-4 bg-black bg-opacity-75 p-8 rounded-xl">
+        <div className="container-lg space-y-4 bg-black bg-opacity-75 p-8 rounded-xl">
   <div className="text-cbb26a">
     <h1 className="text-3xl font-bold text-center mb-4">Behind the Scenes with the Developers</h1>
     <p className="font-bold">Discover and Rate</p>

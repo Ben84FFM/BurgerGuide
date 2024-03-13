@@ -5,8 +5,8 @@ import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 
 const HeroSection = () => {
   return (
-    <div className="container flex bg-cover" style={{ backgroundImage: `url('https://media.gq-magazin.de/photos/5fca217030a450011a3a481e/master/w_1600%2Cc_limit/hamburguesa.jpg')` }}>
-      <div className="container flex flex-col items-center max-w-screen-xl mx-auto relative pt-8 pb-8">
+    <div className="container-lg flex bg-cover" style={{ backgroundImage: `url('https://media.gq-magazin.de/photos/5fca217030a450011a3a481e/master/w_1600%2Cc_limit/hamburguesa.jpg')` }}>
+      <div className="container flex flex-col items-center max-w-screen-xl mx-auto relative pt-8 pb-8 pr-2 pl-2">
         <StoreCarousel />
         <div className="container bg-opacity-80 flex flex-col lg:flex-row items-center bg-black rounded-xl pt-6 pb-6">
           <img

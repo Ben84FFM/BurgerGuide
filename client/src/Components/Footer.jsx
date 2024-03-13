@@ -12,7 +12,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className='container flex bg-gradient-to-r from-black via-zinc-800 to-black p-4 text-cbb26a py-8 border-t-4 footerBorder'>
+    <footer className='container-lg flex bg-gradient-to-r from-black via-zinc-800 to-black p-4 text-cbb26a py-8 border-t-4 footerBorder'>
       <div className='container mx-auto flex flex-wrap justify-center lg:justify-between ml-4'>
         <div className='footer-section mb-4 lg:mb-0 w-full lg:w-1/4'>
           <Link
@@ -56,7 +56,12 @@ const Footer = () => {
         </div>
 
         <div className='footer-section mt-4 lg:mt-0 mb-4 lg:mb-0 w-full lg:w-1/4'>
-          <h4 className='text-cbb26a text-lg font-bold mb-2'>Follow Us</h4>
+        <h1
+          className='text-cbb26a font-bold text-4xl font-bold pb-2'
+          style={{ transform: 'scalex(1)', fontFamily: 'Alex Brush, cursive' }}
+        >
+           Follow us
+        </h1>
           <div className='flex items-center space-x-4'>
             <a
               href='https://www.linkedin.com/dein-linkedin'
