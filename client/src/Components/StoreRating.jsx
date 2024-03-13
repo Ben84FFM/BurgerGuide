@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import PolicyBackground from './DynamicBackground';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
 
 const BurgerRating = () => {
   const { storeId } = useParams();
@@ -112,7 +115,16 @@ const BurgerRating = () => {
           <br />
           <p className='font-bold'>Thank you for your support!</p>
           <br />
-          <p className='font-bold'>Your BurgerGuideTeam!</p>
+          <p className='font-bold'>Your BurgerGuideTeam!</p><br />
+  
+  <Link
+  to='/burgerstores'
+  className='text-cbb26a font-bold mb-4 px-4 cursor-pointer hover:opacity-80 flex items-center'
+>
+  <FontAwesomeIcon icon={faArrowAltCircleLeft} className='text-cbb26a mr-2 '/>
+ Back to Store
+</Link>
+
         </p>
       </div>
 
@@ -155,7 +167,7 @@ const BurgerRating = () => {
               </p>
             </div>
             <button
-              className='flex items-center justify-center mx-auto sm:px-4 md:px-6 lg:px-8 text-xl font-bold text-cbb26a bg-black font-bold text-cbb26a text-center imageBorderLogo py-2 px-4 rounded-md transition duration-300 hover:text-white'
+              className='flex items-center justify-center mx-auto sm:px-4 md:px-6 lg:px-8 text-xl font-bold text-cbb26a bg-black font-bold text-cbb26a text-center imageBorderLogo py-2 px-4 rounded-md transition duration-300 hover:text-white mt-4'
               onClick={() => {
                 handleSubmit();
                 setShowRatingForm(false);

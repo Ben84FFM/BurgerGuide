@@ -8,7 +8,7 @@ import RegisterForm from './Components/RegisterForm';
 import LoginForm from './Components/LoginForm';
 import AddStoreForm from './Components/addStore';
 import AboutUs from './Components/AboutUs';
-import SearchTest from './Components/SearchTest';
+import SearchStores from './Components/SearchStores';
 import StoreDetails from './Components/StoreDetail';
 import BurgerRating from './Components/StoreRating';
 import PrivacyPolicy from './Components/dataPolicy';
@@ -22,7 +22,7 @@ function App() {
       <Routes>
 
         <Route path="/about" element={<AboutUs />} />
-        <Route path="/burgerstores" element={<SearchTest />} />
+        <Route path="/burgerstores" element={<SearchStores />} />
         <Route path="/" element={<HeroSection />} />
         <Route path='/register' element={<RegisterForm />} />
         <Route path='/login' element={<LoginForm />} />

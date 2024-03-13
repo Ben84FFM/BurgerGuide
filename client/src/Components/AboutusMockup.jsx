@@ -14,10 +14,10 @@ const TechStCarouselButton = () => {
 
   return (
     <div className="container mx-auto p-2 max-w-full ">
-      <h1 className="text-xs mb-2 text-cbb26a font-bold">Our TechStack we used to build BurgerGuide</h1>
+      <h1 className="text-cbb26a font-bold">Our TechStack we used to build BurgerGuide</h1>
       <button
         onClick={handleContactButtonClick}
-        className="bg-black font-bold text-cbb26a text-center imageBorderLogo py-2 px-4 rounded-md transition duration-300 hover:text-white"
+        className="bg-black font-bold text-cbb26a text-center imageBorderLogo py-2 px-4 rounded-md transition duration-300 hover:text-white mt-4"
       >
         SHOW
       </button>
