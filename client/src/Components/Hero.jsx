@@ -10,7 +10,7 @@ const HeroSection = () => {
         <StoreCarousel />
         <div className="container bg-opacity-80 flex flex-col lg:flex-row items-center bg-black rounded-xl pt-6 pb-6">
           <img
-            src="../src/public/BurgerGuideLogo3.png"
+            src='BurgerGuideLogo2.png'
             alt="BurgerGuideLogo"
             className="imageBorderLogo mb-4 rounded-xl lg:order-1"
           />

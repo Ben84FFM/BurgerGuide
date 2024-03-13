@@ -60,7 +60,7 @@ const AddStoreForm = () => {
       <div className='container flex justify-center items-center bg-transparent pb-8'>
         <div className='bg-opacity-90 justify-center bg-black rounded-xl mt-8 mb-4 pr-6 pl-6 '>
           <img
-            src='../src/assets/BurgerGuideLogo3.png'
+            src='BurgerGuideLogo3.png'
             alt='BurgerGuideLogo'
             className='container h-auto rounded-md mb-4 pr-6 pl-6'
           />

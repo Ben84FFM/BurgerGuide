@@ -10,7 +10,7 @@ const AboutUs = () => {
       <div className='container-lg flex flex-row relative space-x-8'>
         <div className="">
           <img
-            src="../src/assets/BurgerGuideLogo2.png"
+            src="BurgerGuideLogo2.png"
             alt="BurgerGuideLogo"
             className="container imageBorderLogo h-auto mb-4 rounded-xl "
           />
